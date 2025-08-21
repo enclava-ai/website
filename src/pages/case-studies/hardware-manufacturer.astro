@@ -1,0 +1,637 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Case Study: Sensitive Hardware Manufacturer | Enclava">
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/"><span class="gradient-text">Enclava</span></a>
+        </div>
+        <div class="nav-links">
+          <a href="/#features">Features</a>
+          <a href="/#security">Security</a>
+          <a href="/#why-choose">Why Choose</a>
+          <a href="/#contact" class="btn-primary">Get Started</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+      <div class="mobile-menu">
+        <a href="/#features" class="mobile-menu-item">Features</a>
+        <a href="/#security" class="mobile-menu-item">Security</a>
+        <a href="/#why-choose" class="mobile-menu-item">Why Choose</a>
+        <a href="/#contact" class="mobile-menu-item btn-primary">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="case-hero section">
+    <div class="container">
+      <div class="case-hero-content">
+        <div class="case-breadcrumb">
+          <a href="/">Home</a> → <a href="/#case-studies">Case Studies</a> → <span>Hardware Manufacturer</span>
+        </div>
+        <div class="case-industry">Hardware Manufacturing</div>
+        <h1 class="case-title">
+          Sensitive Hardware Manufacturer
+          <br />Deploys <span class="gradient-text">Secure CRM</span>
+        </h1>
+        <p class="case-subtitle">
+          How a leading defense contractor used Enclava's confidential AI platform to transform their customer relationship management while maintaining military-grade security.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Content -->
+  <section class="case-content section">
+    <div class="container">
+      <div class="case-overview card">
+        <h2>Challenge</h2>
+        <p>
+          A major defense contractor needed to modernize their customer relationship management system to handle sensitive client communications, project timelines, and classified procurement data. Traditional CRM solutions posed unacceptable security risks, as they required data to be processed in potentially vulnerable cloud environments.
+        </p>
+        <p>
+          The company required a solution that could provide AI-powered insights and automation while ensuring that sensitive defense contractor information never left a secure, auditable environment.
+        </p>
+      </div>
+
+      <div class="case-solution card">
+        <h2>Solution</h2>
+        <p>
+          The contractor deployed Enclava's confidential AI platform to power their CRM system, leveraging several key capabilities:
+        </p>
+        <div class="solution-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <div class="icon-secure-processing"></div>
+            </div>
+            <div class="feature-text">
+              <h3>Confidential AI Processing</h3>
+              <p>All customer data and communications processed within secure enclaves with cryptographic attestation</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <div class="icon-document-analysis"></div>
+            </div>
+            <div class="feature-text">
+              <h3>Intelligent Document Analysis</h3>
+              <p>Automated parsing and categorization of contracts, proposals, and technical specifications</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <div class="icon-workflow"></div>
+            </div>
+            <div class="feature-text">
+              <h3>Automated Workflows</h3>
+              <p>Smart routing of sensitive communications and automated compliance checking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results card">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="result-icon">✓</div>
+            <h3>Zero Security Incidents</h3>
+            <p>Complete data protection with full audit trails for compliance</p>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">✓</div>
+            <h3>60% Faster Processing</h3>
+            <p>Automated document analysis and intelligent workflow routing</p>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">✓</div>
+            <h3>Full Compliance</h3>
+            <p>Met all defense contractor security requirements and regulations</p>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">✓</div>
+            <h3>Improved Efficiency</h3>
+            <p>Team can focus on strategic work instead of manual data processing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-quote card">
+        <blockquote>
+          "Enclava gave us the AI capabilities we needed without compromising on security. We can now process sensitive client data with confidence, knowing it never leaves our secure environment."
+        </blockquote>
+        <cite>— Chief Technology Officer, Defense Contractor</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="case-cta section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Operations?</h2>
+        <p>See how Enclava can help your organization deploy AI while maintaining the highest security standards.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn-primary">Schedule a Demo</a>
+          <a href="/" class="btn-secondary">Learn More About Enclava</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 15, 28, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .logo a {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:not(.btn-primary):hover {
+    color: #00d4ff;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    color: #0a0f1c;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    padding: 14px 28px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: #00d4ff;
+    color: #00d4ff;
+    transform: translateY(-2px);
+  }
+
+  /* Case Study Specific Styles */
+  .case-hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .case-breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .case-breadcrumb a {
+    color: #00d4ff;
+    text-decoration: none;
+  }
+
+  .case-breadcrumb span {
+    color: #ffffff;
+  }
+
+  .case-industry {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00ff88;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .case-title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .case-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  .case-content {
+    padding: 80px 0;
+  }
+
+  .case-content .card {
+    margin-bottom: 40px;
+  }
+
+  .case-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #00d4ff;
+  }
+
+  .case-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .solution-features {
+    display: grid;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #00d4ff, #00ff88);
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .feature-text p {
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .result-item {
+    text-align: center;
+    padding: 24px;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+  }
+
+  .result-icon {
+    font-size: 2rem;
+    color: #00ff88;
+    margin-bottom: 16px;
+  }
+
+  .result-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .result-item p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+
+  .case-quote {
+    text-align: center;
+    padding: 48px 40px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  .case-quote blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #ffffff;
+  }
+
+  .case-quote cite {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 600;
+  }
+
+  .case-cta {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+    text-align: center;
+  }
+
+  .case-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .case-cta p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Mobile Navigation Styles */
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 15, 28, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+
+  .mobile-menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu-item:not(.btn-primary):hover {
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+  }
+
+  .mobile-menu-item.btn-primary {
+    margin: 16px 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    border-bottom: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .case-hero {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    .case-title {
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .case-subtitle {
+      font-size: 1rem;
+    }
+
+    .case-content {
+      padding: 60px 0;
+    }
+
+    .case-content .card {
+      margin-bottom: 32px;
+      padding: 24px 20px;
+    }
+
+    .case-content h2 {
+      font-size: 1.6rem;
+    }
+
+    .case-content p {
+      font-size: 1rem;
+    }
+
+    .solution-features {
+      gap: 24px;
+    }
+
+    .feature-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .architecture-flow {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .result-item {
+      padding: 20px 16px;
+    }
+
+    .case-quote {
+      padding: 32px 20px;
+    }
+
+    .case-quote blockquote {
+      font-size: 1.1rem;
+    }
+
+    .case-cta h2 {
+      font-size: 2rem;
+    }
+
+    .case-cta p {
+      font-size: 1rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .case-title {
+      font-size: 1.8rem;
+    }
+
+    .case-content .card {
+      padding: 20px 16px;
+    }
+
+    .case-quote {
+      padding: 24px 16px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on menu items
+      mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          mobileMenuToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const target = e.target as Node;
+        if (!mobileMenuToggle.contains(target) && !mobileMenu.contains(target)) {
+          mobileMenuToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+        }
+      });
+    }
+  });
+</script>
