@@ -14,6 +14,9 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
   <body>
@@ -26,14 +29,49 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
       }
 
       html {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        scroll-behavior: smooth;
       }
 
       body {
-        background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #0d1421 100%);
+        background: 
+          radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom right, rgba(0, 255, 136, 0.15) 0%, transparent 50%),
+          radial-gradient(ellipse at center, rgba(26, 35, 50, 0.8) 0%, transparent 70%),
+          linear-gradient(135deg, #0a0f1c 0%, #1a2332 30%, #0d1421 60%, #1a2332 100%);
         color: #ffffff;
-        line-height: 1.6;
+        line-height: 1.7;
         overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 60%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
+        animation: ambientFlow 20s ease-in-out infinite;
+      }
+
+      @keyframes ambientFlow {
+        0%, 100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1) rotate(2deg);
+          opacity: 0.8;
+        }
       }
 
       .container {
@@ -43,34 +81,95 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
       }
 
       .gradient-text {
-        background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+        background: linear-gradient(
+          135deg, 
+          #00d4ff 0%, 
+          #00ff88 25%, 
+          #6366f1 50%, 
+          #00d4ff 75%, 
+          #00ff88 100%
+        );
+        background-size: 200% 200%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        animation: gradientShift 8s ease-in-out infinite;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      @keyframes gradientShift {
+        0%, 100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
       }
 
       .btn-primary {
+        position: relative;
         background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
         color: #0a0f1c;
-        padding: 14px 28px;
+        padding: 16px 32px;
         border: none;
-        border-radius: 8px;
+        border-radius: 12px;
         font-weight: 600;
         font-size: 16px;
         cursor: pointer;
         text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 
+          0 8px 32px rgba(0, 212, 255, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
       }
 
       .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 
+          0 20px 40px rgba(0, 212, 255, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-primary:active {
+        transform: translateY(-2px) scale(1.01);
       }
 
       .section {
-        padding: 80px 0;
+        padding: 120px 0;
         position: relative;
+      }
+
+      .section:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
       }
 
       .flow-bg {
@@ -117,18 +216,39 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        padding: 32px;
-        transition: all 0.3s ease;
+        position: relative;
+        background: 
+          linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+        backdrop-filter: blur(20px) saturate(1.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 40px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 
+          0 4px 20px rgba(0, 0, 0, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.04);
+        overflow: hidden;
+      }
+
+      .card:nth-child(2n+1) {
+        border-radius: 32px 24px 32px 24px;
+      }
+
+      .card:nth-child(2n) {
+        border-radius: 24px 32px 24px 32px;
+      }
+
+      .card:nth-child(3n) {
+        border-radius: 28px;
       }
 
       .card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(0, 212, 255, 0.3);
+        background: 
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 0 rgba(255, 255, 255, 0.06);
       }
 
       @media (max-width: 768px) {

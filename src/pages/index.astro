@@ -12,8 +12,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="nav-links">
           <a href="#features">Features</a>
-          <a href="#security">Security</a>
-          <a href="#why-choose">Why Choose</a>
+          <a href="#case-studies">Examples</a>
+          <a href="#why-choose">Why us</a>
           <a href="#contact" class="btn-primary">Get Started</a>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
@@ -24,31 +24,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mobile-menu">
         <a href="#features" class="mobile-menu-item">Features</a>
-        <a href="#security" class="mobile-menu-item">Security</a>
-        <a href="#why-choose" class="mobile-menu-item">Why Choose</a>
+        <a href="#case-studies" class="mobile-menu-item">Examples</a>
+        <a href="#why-choose" class="mobile-menu-item">Why us</a>
         <a href="#contact" class="mobile-menu-item btn-primary">Get Started</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero section">
-    <div class="flow-bg"></div>
-    <div class="container">
+  <section class="hero">
+    <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          TRANSFORMING
-          <br />BUSINESS AI WITH
-          <br /><span class="gradient-text">ENCLAVA</span>
+          Run AI on sensitive data without exposing it
         </h1>
-        <p class="hero-subtitle">
-          Transform Your Business with Secure, Confidential AI Infrastructure
-        </p>
         <p class="hero-description">
-          Enclava is the enterprise-grade AI platform that combines cutting-edge artificial intelligence with military-grade security, trusted execution environments, and developer-friendly APIs. Built for organizations that demand both innovation and confidentiality.
+          Process documents, conversations, and private information with AI while keeping everything encrypted in secure hardware enclaves. No data leaves your control.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Get Started Today</a>
+          <a href="#contact" class="btn-primary">Get Started</a>
           <a href="#features" class="btn-secondary">Learn More</a>
         </div>
       </div>
@@ -59,10 +53,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="features" class="features-overview section">
     <div class="container">
       <h2 class="section-title">
-        COMPREHENSIVE AI <span class="gradient-text">SOLUTIONS</span>
+        What you can build
       </h2>
       <p class="section-subtitle">
-        Enclava's flagship solutions combine performance, security, and confidentiality for enterprise environments, enabling smarter, faster, and customer-centric operations.
+        Real applications our customers are running in production today.
       </p>
       
       <div class="features-grid">
@@ -75,12 +69,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="chat-dots"></div>
             </div>
           </div>
-          <h3>Intelligent Chatbot Ecosystem</h3>
+          <h3>AI Chatbots</h3>
           <ul>
-            <li>Custom AI Personalities: Create specialized chatbots with unique behaviors and personalities</li>
-            <li>Smart Prompt Engineering: AI-powered prompt optimization with template management</li>
-            <li>Contextual Memory: Configurable conversation history for personalized interactions</li>
-            <li>Document-Aware Responses: RAG-powered chatbots that understand your knowledge base</li>
+            <li>Build chatbots that remember conversation context</li>
+            <li>Connect to your documents and knowledge base</li>
+            <li>Create different AI personalities for different use cases</li>
+            <li>All running on your encrypted data</li>
           </ul>
         </div>
 
@@ -94,12 +88,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="scan-line"></div>
             </div>
           </div>
-          <h3>Advanced Document Intelligence</h3>
+          <h3>Document Processing</h3>
           <ul>
-            <li>Universal Format Support: Process PDFs, Word docs, and text files seamlessly</li>
-            <li>Semantic Search: Find information using natural language queries, not keywords</li>
-            <li>Smart Collections: Organize documents with isolation and access controls</li>
-            <li>Real-Time Processing: Instant document parsing and intelligent indexing</li>
+            <li>Upload PDFs, Word docs, and text files</li>
+            <li>Ask questions about your documents in plain English</li>
+            <li>Organize documents into secure collections</li>
+            <li>Search across all your content instantly</li>
           </ul>
         </div>
 
@@ -112,11 +106,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="lock-symbol"></div>
             </div>
           </div>
-          <h3>Enterprise-Grade Security</h3>
+          <h3>Security & Access Control</h3>
           <ul>
-            <li>Real-Time Threat Detection: Automatic blocking of SQL injection, XSS, and malicious requests</li>
-            <li>Behavioral Analytics: AI-powered anomaly detection for unusual usage patterns</li>
-            <li>Granular Access Control: Budget-controlled API keys with tiered rate limiting</li>
+            <li>Block common attacks automatically</li>
+            <li>Set usage limits and budgets for different teams</li>
+            <li>Monitor for unusual activity patterns</li>
           </ul>
         </div>
 
@@ -130,12 +124,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="vault-center"></div>
             </div>
           </div>
-          <h3>Confidential Environment</h3>
+          <h3>Confidential Computing</h3>
           <ul>
-            <li>Confidential AI Processing: Confidential integration for zero-knowledge inference</li>
-            <li>Cryptographic Attestation: Verifiable proof of secure execution</li>
-            <li>End-to-End Encryption: Complete data protection throughout the AI pipeline</li>
-            <li>Privacy-First Architecture: Your data never leaves the secure enclave</li>
+            <li>AI runs inside secure hardware enclaves</li>
+            <li>Your data is encrypted in memory and storage</li>
+            <li>Verify that code hasn't been tampered with</li>
+            <li>We can't see your data, even if we wanted to</li>
           </ul>
         </div>
 
@@ -150,12 +144,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="workflow-connection-v"></div>
             </div>
           </div>
-          <h3>Workflow Automation Engine</h3>
+          <h3>Workflows</h3>
           <ul>
-            <li>Multi-Step Orchestration: Chain complex AI operations with conditional logic</li>
-            <li>Parallel Processing: Execute multiple workflows simultaneously for speed</li>
-            <li>Smart Transformations: Intelligent data processing between workflow steps</li>
-            <li>Persistent State Management: Reliable execution tracking and recovery</li>
+            <li>Chain multiple AI operations together</li>
+            <li>Run workflows in parallel for faster processing</li>
+            <li>Handle errors and retries automatically</li>
+            <li>Transform data between steps as needed</li>
           </ul>
         </div>
 
@@ -168,12 +162,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="api-connection"></div>
             </div>
           </div>
-          <h3>Developer-First APIs</h3>
+          <h3>Developer APIs</h3>
           <ul>
-            <li>OpenAI Drop-In Replacement: Seamlessly migrate existing applications</li>
-            <li>Comprehensive REST API: Full-featured endpoints with detailed documentation</li>
-            <li>Modular Architecture: Extend functionality with custom plugins</li>
-            <li>Usage Analytics: Track performance, costs, and success metrics</li>
+            <li>Drop-in replacement for OpenAI's API</li>
+            <li>REST endpoints for all features</li>
+            <li>Track usage, costs, and performance</li>
+            <li>Extend with custom plugins</li>
           </ul>
         </div>
       </div>
@@ -181,13 +175,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Case Studies -->
-  <section class="case-studies section">
+  <section id="case-studies" class="case-studies section">
     <div class="container">
       <h2 class="section-title">
-        TRUSTED BY <span class="gradient-text">INDUSTRY LEADERS</span>
+        Customer examples
       </h2>
       <p class="section-subtitle">
-        See how organizations across industries leverage Enclava to transform their AI operations while maintaining the highest security standards.
+        How teams are using Enclava to process sensitive data with AI.
       </p>
       
       <div class="case-studies-grid">
@@ -199,9 +193,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
           <div class="case-study-industry">Hardware Manufacturing</div>
-          <h3>Sensitive Hardware Manufacturer</h3>
+          <h3>Defense Contractor CRM</h3>
           <p class="case-study-description">
-            A leading defense contractor deployed Enclava's secure AI platform to power their customer relationship management system, processing sensitive client data and communications with military-grade confidentiality.
+            A hardware manufacturer needed to process sensitive customer data for their CRM. Traditional cloud AI was too risky, so they built their system on Enclava to keep everything encrypted.
           </p>
           <div class="case-study-actions">
             <a href="/case-studies/hardware-manufacturer" class="btn-case-study">Read Full Case Study</a>
@@ -216,9 +210,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
           <div class="case-study-industry">Communications Technology</div>
-          <h3>Private AI Assistant Platform</h3>
+          <h3>Encrypted AI Assistant</h3>
           <p class="case-study-description">
-            A privacy-focused startup built their encrypted AI assistant service on Enclava's platform, enabling secure conversations over Signal with zero-knowledge processing and end-to-end encryption.
+            A team building an AI assistant needed to process conversations without exposing user data. They used Enclava to run AI inference while keeping messages encrypted end-to-end.
           </p>
           <div class="case-study-actions">
             <a href="/case-studies/private-ai-assistant" class="btn-case-study">Read Full Case Study</a>
@@ -232,7 +226,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="perfect-for section">
     <div class="container">
       <h2 class="section-title">
-        PERFECT FOR
+        Good fit if you have
       </h2>
       <div class="perfect-for-grid">
         <div class="perfect-for-card card">
@@ -244,7 +238,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="shield-overlay"></div>
             </div>
           </div>
-          <h3>Companies Processing Sensitive Information</h3>
+          <h3>Sensitive customer data</h3>
         </div>
         <div class="perfect-for-card card">
           <div class="perfect-icon">
@@ -253,7 +247,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="privacy-lock"></div>
             </div>
           </div>
-          <h3>Businesses Wanting AI Automation with Data Privacy</h3>
+          <h3>Privacy requirements</h3>
         </div>
         <div class="perfect-for-card card">
           <div class="perfect-icon">
@@ -262,7 +256,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="attestation-mark"></div>
             </div>
           </div>
-          <h3>Regulated Industries Requiring Confidential AI Processing</h3>
+          <h3>Compliance obligations</h3>
         </div>
         <div class="perfect-for-card card">
           <div class="perfect-icon">
@@ -271,7 +265,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="analysis-layer"></div>
             </div>
           </div>
-          <h3>Document-Heavy Businesses Needing Intelligent Analysis</h3>
+          <h3>Lots of documents to process</h3>
         </div>
         <div class="perfect-for-card card">
           <div class="perfect-icon">
@@ -280,7 +274,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="security-check"></div>
             </div>
           </div>
-          <h3>Compliance-Focused Organizations with Audit Requirements</h3>
+          <h3>Audit requirements</h3>
         </div>
         <div class="perfect-for-card card">
           <div class="perfect-icon">
@@ -289,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="scalability-arrow"></div>
             </div>
           </div>
-          <h3>Enterprise Teams Scaling AI Infrastructure Securely</h3>
+          <h3>Need to scale securely</h3>
         </div>
       </div>
     </div>
@@ -299,7 +293,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="why-choose" class="why-choose section">
     <div class="container">
       <h2 class="section-title">
-        WHY <span class="gradient-text">ENCLAVA?</span>
+        Why choose us
       </h2>
       <div class="why-choose-grid">
         <div class="why-card card">
@@ -309,8 +303,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="foundation-base"></div>
             </div>
           </div>
-          <h3>Confidentiality-First Design</h3>
-          <p>Built to protect your data from day one</p>
+          <h3>Privacy first</h3>
+          <p>Your data stays encrypted, even from us</p>
         </div>
         <div class="why-card card">
           <div class="why-icon">
@@ -319,8 +313,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="crypto-verification"></div>
             </div>
           </div>
-          <h3>Trusted Execution</h3>
-          <p>Cryptographically verified confidential computing</p>
+          <h3>Verifiable security</h3>
+          <p>Prove your code is running securely</p>
         </div>
         <div class="why-card card">
           <div class="why-icon">
@@ -329,8 +323,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="compatibility-layer"></div>
             </div>
           </div>
-          <h3>Developer Friendly</h3>
-          <p>OpenAI-compatible with comprehensive documentation</p>
+          <h3>Easy to integrate</h3>
+          <p>Drop-in replacement for OpenAI</p>
         </div>
         <div class="why-card card">
           <div class="why-icon">
@@ -339,8 +333,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="monitoring-pulse"></div>
             </div>
           </div>
-          <h3>Enterprise Ready</h3>
-          <p>Scalable, monitored, and compliance-focused</p>
+          <h3>Built for teams</h3>
+          <p>Usage controls, monitoring, and collaboration</p>
         </div>
       </div>
     </div>
@@ -351,11 +345,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="cta-content">
         <h2>
-          TRANSFORM YOUR
-          <br />AI OPERATIONS WITH
-          <br /><span class="gradient-text">ENCLAVA</span>
+          Ready to try Enclava?
         </h2>
-        <p>Experience the future of secure, confidential AI processing. Get started with our enterprise-grade platform today.</p>
+        <p>Start building AI applications that keep your data private. No long-term contracts required.</p>
         <div class="cta-actions">
           <a href="#" class="btn-primary">Start Free Trial</a>
           <a href="#" class="btn-secondary">Book a Demo</a>
@@ -484,85 +476,164 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 1;
+  }
+
+  .hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content {
+    max-width: 680px;
+    margin: 0 auto;
   }
 
   .hero-title {
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 4.2rem;
     font-weight: 600;
-    margin-bottom: 16px;
-    opacity: 0.9;
+    line-height: 1.08;
+    margin-bottom: 40px;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .hero-description {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.7;
+    font-size: 1.35rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 56px;
+    font-weight: 400;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 56px;
   }
 
   .hero-actions {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .btn-secondary {
     background: transparent;
-    color: #ffffff;
-    padding: 14px 28px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 16px 32px;
+    border: none;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
-    cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
 
   .btn-secondary:hover {
-    border-color: #00d4ff;
-    color: #00d4ff;
-    transform: translateY(-2px);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   /* Features Section */
+  .section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section:nth-child(even) {
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.01) 50%, transparent 100%);
+  }
+
   .section-title {
-    font-size: 2.5rem;
-    font-weight: 900;
+    font-size: 2.8rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     text-align: center;
-    opacity: 0.8;
-    max-width: 800px;
-    margin: 0 auto 60px;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 720px;
+    margin: 0 auto 80px;
     line-height: 1.6;
+    font-weight: 400;
   }
 
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 32px;
-    margin-top: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px 32px;
+    margin-top: 80px;
+    position: relative;
   }
 
   .feature-card {
     text-align: left;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .feature-card:nth-child(even) {
+    transform: translateY(20px);
+  }
+
+  .feature-card:nth-child(3n) {
+    transform: translateY(10px);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .feature-card:nth-child(even):hover {
+    transform: translateY(12px);
+  }
+
+  .feature-card:nth-child(3n):hover {
+    transform: translateY(2px);
   }
 
   .feature-icon {
@@ -888,19 +959,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .case-studies-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    margin-top: 60px;
+    gap: 48px 40px;
+    margin-top: 80px;
+    align-items: start;
   }
 
   .case-study {
     text-align: left;
-    padding: 40px 32px;
-    transition: all 0.3s ease;
+    padding: 48px 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .case-study:first-child {
+    transform: translateY(-20px);
+  }
+
+  .case-study:last-child {
+    transform: translateY(20px);
   }
 
   .case-study:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+  }
+
+  .case-study:first-child:hover {
+    transform: translateY(-28px);
+  }
+
+  .case-study:last-child:hover {
+    transform: translateY(12px);
   }
 
   .case-study-icon {
@@ -1093,13 +1181,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .perfect-for-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
+    gap: 32px 28px;
+    margin-top: 60px;
+    align-items: start;
   }
 
   .perfect-for-card {
     text-align: center;
-    padding: 40px 24px;
+    padding: 48px 32px;
+    position: relative;
+  }
+
+  .perfect-for-card:nth-child(2) {
+    transform: translateY(24px);
+  }
+
+  .perfect-for-card:nth-child(5) {
+    transform: translateY(24px);
+  }
+
+  .perfect-for-card:nth-child(3n) {
+    transform: translateY(12px);
   }
 
   .perfect-icon {
@@ -1619,7 +1721,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   @media (max-width: 768px) {
     /* Mobile Navigation */
     .nav {
-      position: relative;
+      position: fixed;
     }
 
     .nav-content {
@@ -1634,27 +1736,87 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       display: flex;
     }
 
-    /* Mobile Typography */
+    /* Mobile Hero */
     .hero {
-      padding-top: 100px;
-      padding-bottom: 60px;
-      min-height: 80vh;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    .hero::before,
+    .hero::after {
+      display: none;
+    }
+
+    .hero-container {
+      padding: 0 20px;
     }
 
     .hero-title {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
       line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 14px;
+      margin-bottom: 32px;
     }
 
     .hero-description {
-      font-size: 1rem;
-      margin-bottom: 32px;
+      font-size: 1.2rem;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    /* Mobile Layout Adjustments */
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .feature-card:nth-child(even),
+    .feature-card:nth-child(3n) {
+      transform: translateY(0);
+    }
+
+    .feature-card:hover,
+    .feature-card:nth-child(even):hover,
+    .feature-card:nth-child(3n):hover {
+      transform: translateY(-4px);
+    }
+
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .case-study:first-child,
+    .case-study:last-child {
+      transform: translateY(0);
+    }
+
+    .case-study:hover,
+    .case-study:first-child:hover,
+    .case-study:last-child:hover {
+      transform: translateY(-4px);
+    }
+
+    .perfect-for-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .perfect-for-card:nth-child(2),
+    .perfect-for-card:nth-child(5),
+    .perfect-for-card:nth-child(3n) {
+      transform: translateY(0);
     }
 
     .section-title {
