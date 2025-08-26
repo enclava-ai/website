@@ -295,10 +295,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </h2>
         <p>Be the first to know when Enclava Cloud launches. Get early access to our fully managed confidential computing platform.</p>
         <div class="waitlist-form">
-          <form action="#" method="POST" class="email-signup">
-            <input type="email" placeholder="Enter your email" class="email-input" required>
-            <button type="submit" class="btn-primary">Join waitlist</button>
+          <form id="waitlist-form" class="email-signup">
+            <input type="email" placeholder="Enter your email" class="email-input" name="email" required>
+            <!-- Honeypot field for bot detection (hidden from users) -->
+            <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off">
+            <button type="submit" class="btn-primary">
+              <span class="button-text">Join waitlist</span>
+              <span class="loading-spinner" style="display: none;">⟳</span>
+            </button>
           </form>
+          <div id="form-message" class="form-message" style="display: none;"></div>
         </div>
         <p class="waitlist-note">No spam, unsubscribe anytime. We'll only reach out when we have something valuable to share.</p>
       </div>
@@ -425,6 +431,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .email-input::placeholder { color: rgba(255, 255, 255, 0.5); }
   .email-input:focus { border-color: #00d4ff; background: rgba(255, 255, 255, 0.08); }
   .waitlist-note { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin-top: 20px; }
+  
+  /* Form feedback styles */
+  .form-message { margin-top: 16px; padding: 12px 20px; border-radius: 6px; font-size: 0.95rem; text-align: center; }
+  .form-message.success { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); }
+  .form-message.error { background: rgba(255, 82, 82, 0.1); color: #ff5252; border: 1px solid rgba(255, 82, 82, 0.3); }
+  .loading-spinner { animation: spin 1s linear infinite; }
+  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  
+  /* Honeypot field (hidden from users but visible to bots) */
+  .honeypot { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; pointer-events: none; }
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
@@ -476,6 +492,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         if (target && !mobileMenuToggle.contains(target) && !mobileMenu.contains(target)) {
           mobileMenuToggle.classList.remove('active');
           mobileMenu.classList.remove('active');
+        }
+      });
+    }
+
+    // Waitlist form handling
+    const waitlistForm = document.getElementById('waitlist-form') as HTMLFormElement;
+    const formMessage = document.getElementById('form-message') as HTMLElement;
+    const buttonText = document.querySelector('.button-text') as HTMLElement;
+    const loadingSpinner = document.querySelector('.loading-spinner') as HTMLElement;
+
+    if (waitlistForm && formMessage && buttonText && loadingSpinner) {
+      waitlistForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(waitlistForm);
+        const email = formData.get('email');
+        const honeypot = formData.get('honeypot');
+        
+        // Show loading state
+        buttonText.style.display = 'none';
+        loadingSpinner.style.display = 'inline';
+        formMessage.style.display = 'none';
+        
+        try {
+          // Get Google Apps Script URL from environment variable
+          const scriptUrl = import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+          
+          if (!scriptUrl) {
+            throw new Error('Google Apps Script URL not configured');
+          }
+          
+          const response = await fetch(scriptUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+              email: email,
+              honeypot: honeypot,
+              origin: window.location.origin,
+              timestamp: new Date().toISOString()
+            })
+          });
+          
+          const result = await response.json();
+          
+          // Show result message
+          formMessage.style.display = 'block';
+          if (result.success) {
+            formMessage.className = 'form-message success';
+            formMessage.textContent = result.message || 'Successfully joined waitlist!';
+            waitlistForm.reset();
+          } else {
+            formMessage.className = 'form-message error';
+            formMessage.textContent = result.message || 'Something went wrong. Please try again.';
+          }
+          
+        } catch (error) {
+          console.error('Form submission error:', error);
+          formMessage.style.display = 'block';
+          formMessage.className = 'form-message error';
+          formMessage.textContent = 'Network error. Please check your connection and try again.';
+        } finally {
+          // Restore button state
+          buttonText.style.display = 'inline';
+          loadingSpinner.style.display = 'none';
         }
       });
     }
