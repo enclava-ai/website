@@ -56,7 +56,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a href="#waitlist" class="btn-primary">Join waitlist</a>
           <a href="#features" class="btn-primary">Explore features</a>
         </div>
-        <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">Open source • Enclave‑first architecture • On‑prem or private cloud</p>
+        <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">Open source • Privacy‑first architecture • On‑prem or private cloud</p>
       </div>
     </div>
   </section>
@@ -144,47 +144,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Perfect For Section -->
   <section class="perfect-for section">
     <div class="container">
-      <h2 class="section-title">
-        A great fit when you have…
-      </h2>
-      <div class="perfect-for-grid">
-        <div class="perfect-for-card card">
-          <div class="perfect-icon">
-            <div class="icon-data">
-              <div class="data-bar"></div>
-              <div class="data-bar"></div>
-              <div class="data-bar"></div>
-              <div class="shield-overlay"></div>
+      <div class="perfect-for-content">
+        <h2 class="perfect-for-title">
+          A great fit when you have…
+        </h2>
+        <div class="perfect-for-list">
+          <div class="perfect-for-item">
+            <div class="check-icon">✓</div>
+            <div class="item-content">
+              <h3>PII, PHI, or financial data</h3>
+              <p>Handle sensitive personal information with confidence</p>
             </div>
           </div>
-          <h3>PII, PHI, or financial data</h3>
-        </div>
-        <div class="perfect-for-card card">
-          <div class="perfect-icon">
-            <div class="icon-automation">
-              <div class="automation-gear"></div>
-              <div class="privacy-lock"></div>
+          <div class="perfect-for-item">
+            <div class="check-icon">✓</div>
+            <div class="item-content">
+              <h3>Strict privacy requirements</h3>
+              <p>Meet regulatory standards without compromising on functionality</p>
             </div>
           </div>
-          <h3>Strict privacy requirements</h3>
-        </div>
-        <div class="perfect-for-card card">
-          <div class="perfect-icon">
-            <div class="icon-compliance">
-              <div class="compliance-badge"></div>
-              <div class="attestation-mark"></div>
+          <div class="perfect-for-item">
+            <div class="check-icon">✓</div>
+            <div class="item-content">
+              <h3>Compliance & audit obligations</h3>
+              <p>Built-in compliance features for enterprise governance</p>
             </div>
           </div>
-          <h3>Compliance & audit obligations</h3>
-        </div>
-        <div class="perfect-for-card card">
-          <div class="perfect-icon">
-            <div class="icon-documents">
-              <div class="doc-grid"></div>
-              <div class="analysis-layer"></div>
+          <div class="perfect-for-item">
+            <div class="check-icon">✓</div>
+            <div class="item-content">
+              <h3>Proprietary information you want to keep confidential</h3>
+              <p>Protect your intellectual property and trade secrets</p>
             </div>
           </div>
-          <h3>Propriatery information you want to keep confidential</h3>
         </div>
       </div>
     </div>
@@ -197,45 +189,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Why Enclava
       </h2>
       <div class="why-choose-grid">
-        <div class="why-card card">
-          <div class="why-icon">
-            <div class="icon-security-first">
-              <div class="security-layers"></div>
-              <div class="foundation-base"></div>
-            </div>
-          </div>
-          <h3>Privacy‑first</h3>
-          <p>Encryption in use, at rest, and in transit by default.</p>
+        <div class="why-card-large">
+          <div class="why-number">01</div>
+          <h3>Privacy‑first architecture</h3>
+          <p>End-to-end encryption in use, at rest, and in transit. Your data never leaves your control, even during AI processing.</p>
         </div>
-        <div class="why-card card">
-          <div class="why-icon">
-            <div class="icon-trusted">
-              <div class="trust-seal"></div>
-              <div class="crypto-verification"></div>
-            </div>
-          </div>
+        <div class="why-card-large">
+          <div class="why-number">02</div>
           <h3>Verifiable security</h3>
-          <p>Remote attestation so you can prove what’s running—and where.</p>
+          <p>Remote attestation and cryptographic proof that your code runs in genuine secure enclaves. Trust, but verify.</p>
         </div>
-        <div class="why-card card">
-          <div class="why-icon">
-            <div class="icon-developer">
-              <div class="code-blocks"></div>
-              <div class="compatibility-layer"></div>
-            </div>
-          </div>
-          <h3>Drop‑in for your stack</h3>
-          <p>OpenAI‑compatible APIs for fast adoption.</p>
+        <div class="why-card-large">
+          <div class="why-number">03</div>
+          <h3>Drop‑in compatibility</h3>
+          <p>OpenAI‑compatible APIs and familiar developer tools. Migrate your existing AI workflows in minutes, not months.</p>
         </div>
-        <div class="why-card card">
-          <div class="why-icon">
-            <div class="icon-enterprise-ready">
-              <div class="scale-grid"></div>
-              <div class="monitoring-pulse"></div>
-            </div>
-          </div>
-          <h3>Built for teams</h3>
-          <p>Usage controls, monitoring, SSO, and collaboration out of the box.</p>
+        <div class="why-card-large">
+          <div class="why-number">04</div>
+          <h3>Enterprise‑ready</h3>
+          <p>Built-in user management, audit logs, usage controls, and enterprise SSO. Scale from prototype to production.</p>
         </div>
       </div>
     </div>
@@ -375,6 +347,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .feature-card li { margin-bottom: 12px; padding-left: 20px; position: relative; opacity: 0.9; line-height: 1.5; }
   .feature-card li::before { content: '→'; position: absolute; left: 0; color: #00ff88; font-weight: bold; }
 
+  /* Perfect For Section */
+  .perfect-for { padding: 120px 0; background: linear-gradient(135deg, rgba(0, 212, 255, 0.02) 0%, rgba(0, 255, 136, 0.02) 100%); }
+  .perfect-for-content { max-width: 800px; margin: 0 auto; text-align: center; }
+  .perfect-for-title { font-size: 3rem; font-weight: 700; margin-bottom: 60px; background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .perfect-for-list { display: flex; flex-direction: column; gap: 40px; margin-top: 60px; }
+  .perfect-for-item { display: flex; align-items: flex-start; gap: 24px; text-align: left; padding: 32px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; transition: all 0.3s ease; }
+  .perfect-for-item:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(0, 212, 255, 0.3); transform: translateY(-2px); }
+  .check-icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: linear-gradient(135deg, #00d4ff, #00ff88); border-radius: 50%; color: #0a0f1c; font-weight: 900; font-size: 1.4rem; flex-shrink: 0; }
+  .item-content h3 { font-size: 1.4rem; font-weight: 600; color: #ffffff; margin-bottom: 8px; }
+  .item-content p { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.5; margin: 0; }
+
+  /* Why Choose Section */
+  .why-choose { padding: 120px 0; }
+  .why-choose-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 48px; margin-top: 80px; }
+  .why-card-large { padding: 48px 40px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; position: relative; transition: all 0.4s ease; overflow: hidden; }
+  .why-card-large::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.5) 50%, transparent 100%); }
+  .why-card-large:hover { transform: translateY(-8px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border-color: rgba(0, 212, 255, 0.3); }
+  .why-number { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, #00d4ff, #00ff88); border-radius: 16px; color: #0a0f1c; font-weight: 900; font-size: 1.5rem; margin-bottom: 24px; }
+  .why-card-large h3 { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.3; }
+  .why-card-large p { color: rgba(255, 255, 255, 0.75); font-size: 1.1rem; line-height: 1.6; margin: 0; }
+
   /* Waitlist Section */
   .waitlist { padding: 120px 0; text-align: center; }
   .waitlist-content { max-width: 600px; margin: 0 auto; }
@@ -403,6 +396,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; max-width: 280px; }
     .email-signup { flex-direction: column; }
     .email-input { margin-bottom: 16px; }
+    
+    /* Perfect For Mobile */
+    .perfect-for-title { font-size: 2.2rem; }
+    .perfect-for-item { flex-direction: column; text-align: center; gap: 20px; padding: 24px; }
+    .perfect-for-item .item-content h3 { font-size: 1.2rem; }
+    .perfect-for-item .item-content p { font-size: 1rem; }
+    
+    /* Why Choose Mobile */
+    .why-choose-grid { grid-template-columns: 1fr; gap: 32px; }
+    .why-card-large { padding: 32px 24px; }
+    .why-card-large h3 { font-size: 1.4rem; }
+    .why-card-large p { font-size: 1rem; }
+    .why-number { width: 48px; height: 48px; font-size: 1.3rem; }
   }
 
   /* Footer */
