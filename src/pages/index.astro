@@ -54,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Deploy on‑prem</a>
           <a href="#waitlist" class="btn-primary">Join waitlist</a>
-          <a href="#features" class="btn-secondary">Explore features</a>
+          <a href="#features" class="btn-primary">Explore features</a>
         </div>
         <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">Open source • Enclave‑first architecture • On‑prem or private cloud</p>
       </div>
@@ -74,16 +74,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="features-grid">
         <!-- Intelligent Chatbot Ecosystem -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-chat">
-              <div class="chat-bubble"></div>
-              <div class="chat-bubble"></div>
-              <div class="chat-dots"></div>
-            </div>
-          </div>
           <h3>AI chatbots</h3>
           <ul>
-            <li>Assistants that remember context—stored and processed inside enclaves</li>
+            <li>Assistants with access to your knowledge base</li>
             <li>Connect to files, wikis, databases, and internal tools</li>
             <li>Create personas per team or use case with policy controls</li>
             <li>Prompts, history, and embeddings remain encrypted</li>
@@ -92,14 +85,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Advanced Document Intelligence -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-document">
-              <div class="doc-stack"></div>
-              <div class="doc-stack"></div>
-              <div class="doc-stack"></div>
-              <div class="scan-line"></div>
-            </div>
-          </div>
           <h3>Document processing</h3>
           <ul>
             <li>Ingest PDFs, Office docs, emails, and text at scale</li>
@@ -111,13 +96,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Plugin & Integrations -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-security">
-              <div class="shield-outer"></div>
-              <div class="shield-inner"></div>
-              <div class="lock-symbol"></div>
-            </div>
-          </div>
           <h3>Plugins & integrations</h3>
           <ul>
             <li>Build secure tools with a lightweight SDK</li>
@@ -128,14 +106,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Confidential Environment -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-confidential">
-              <div class="vault-circle"></div>
-              <div class="vault-line"></div>
-              <div class="vault-line"></div>
-              <div class="vault-center"></div>
-            </div>
-          </div>
           <h3>Confidential computing</h3>
           <ul>
             <li>Run models and RAG inside trusted execution environments (TEEs)</li>
@@ -147,15 +117,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Workflow Automation Engine -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-workflow">
-              <div class="workflow-node"></div>
-              <div class="workflow-node"></div>
-              <div class="workflow-node"></div>
-              <div class="workflow-connection"></div>
-              <div class="workflow-connection-v"></div>
-            </div>
-          </div>
+
           <h3>Workflows</h3>
           <ul>
             <li>Orchestrate multi‑step agents, tools, and retrieval</li>
@@ -167,13 +129,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Developer-First APIs -->
         <div class="feature-card card">
-          <div class="feature-icon">
-            <div class="icon-api">
-              <div class="api-brackets">&#123;</div>
-              <div class="api-brackets">&#125;</div>
-              <div class="api-connection"></div>
-            </div>
-          </div>
           <h3>Developer APIs</h3>
           <ul>
             <li>OpenAI‑compatible endpoints for chat, RAG, and embeddings</li>
@@ -306,7 +261,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </form>
           <div id="form-message" class="form-message" style="display: none;"></div>
         </div>
-        <p class="waitlist-note">No spam, unsubscribe anytime. We'll only reach out when we have something valuable to share.</p>
+
       </div>
     </div>
   </section>
@@ -321,7 +276,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>Deploy the open‑source platform or talk with us for custom deployments and priority access to Enclava Cloud.</p>
         <div class="cta-actions">
           <a href="https://github.com/enclava-ai/enclava" class="btn-primary">Deploy self‑hosted</a>
-          <a href="https://cal.com/aljaz/enclava" class="btn-secondary">Book a demo</a>
+          <a href="https://cal.com/aljaz/enclava" class="btn-primary">Book a demo</a>
         </div>
       </div>
     </div>
