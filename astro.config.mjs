@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   output: 'static',
   site: 'https://enclava-ai.github.io',
-  base: '/landing-v4',
+  base: '/website',
   build: {
     assets: '_astro'
   },
