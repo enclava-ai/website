@@ -19,7 +19,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <a href="#" class="nav-dropdown-toggle" aria-expanded="false" role="button">Resources <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
             <div class="nav-dropdown-menu" role="menu">
               <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Documentation</a>
-              <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Source Code</a>
+              <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Github</a>
             </div>
           </div>
           <a href="#contact" class="btn-primary" role="button">Get started</a>
@@ -36,7 +36,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="mobile-menu-section">
           <div class="mobile-menu-label">Resources</div>
           <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Documentation</a>
-          <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Source Code</a>
+          <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Github</a>
         </div>
         <a href="#contact" class="mobile-menu-item btn-primary" role="button">Get started</a>
       </div>
@@ -55,17 +55,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Run AI on sensitive data—without exposing it. Enclava executes your prompts, tools, and RAG pipelines inside confidential computing enclaves so data stays encrypted in use, at rest, and in transit.
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn-primary" role="button" aria-describedby="deploy-desc">Deploy on‑prem</a>
-            <a href="#waitlist" class="btn-primary" role="button" aria-describedby="waitlist-desc">Join waitlist</a>
-            <a href="#features" class="btn-primary" role="button" aria-describedby="features-desc">Explore features</a>
+            <a href="#contact" class="btn-primary" role="button" aria-describedby="deploy-desc">Deploy self‑hosted</a>
+            <a href="#waitlist" class="btn-primary" role="button" aria-describedby="waitlist-desc">Join cloud waitlist</a>
+            <a href="#features" class="btn-secondary" role="button" aria-describedby="features-desc">Explore features</a>
           </div>
           <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">
             <span aria-label="Key benefits">Open source • Privacy‑first architecture • On‑prem or private cloud</span>
           </p>
           <!-- Screen reader descriptions -->
           <div class="sr-only">
-            <p id="deploy-desc">Learn about self-hosted deployment options</p>
-            <p id="waitlist-desc">Join our cloud platform waitlist for early access</p>
+            <p id="deploy-desc">Deploy Enclava open-source on your own infrastructure</p>
+            <p id="waitlist-desc">Join waitlist for our fully managed cloud platform</p>
             <p id="features-desc">Discover Enclava's privacy-focused AI features</p>
           </div>
         </div>
@@ -242,22 +242,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="waitlist-content">
         <h2>
-          Join the cloud waitlist
+          Join the Enclava Cloud waitlist
         </h2>
-        <p>Be the first to know when Enclava Cloud launches. Get early access to our fully managed confidential computing platform.</p>
+        <p>Get early access to our <strong>fully managed cloud platform</strong>. No infrastructure setup, no maintenance—just secure private AI ready to use.</p>
+
         <div class="waitlist-form">
           <form id="waitlist-form" class="email-signup">
-            <input type="email" placeholder="Enter your email" class="email-input" name="email" required>
+            <input type="email" placeholder="Enter your email for cloud access" class="email-input" name="email" required>
             <!-- Honeypot field for bot detection (hidden from users) -->
             <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off">
             <button type="submit" class="btn-primary">
-              <span class="button-text">Join waitlist</span>
+              <span class="button-text">Join cloud waitlist</span>
               <span class="loading-spinner" style="display: none;">⟳</span>
             </button>
           </form>
           <div id="form-message" class="form-message" style="display: none;"></div>
         </div>
-
+        <p class="waitlist-note">Cloud platform only. For self-hosted options, see deployment section below.</p>
       </div>
     </div>
   </section>
@@ -267,12 +268,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="cta-content">
         <h2>
-          Enclava AI platform in minutes
+          Get started with Enclava
         </h2>
-        <p>Deploy the open‑source platform or talk with us for custom deployments and priority access to Enclava Cloud.</p>
-        <div class="cta-actions">
-          <a href="https://github.com/enclava-ai/enclava" class="btn-primary">Deploy self‑hosted</a>
-          <a href="https://cal.com/aljaz/enclava" class="btn-primary">Book a demo</a>
+        <p>Choose the deployment option that works best for your team and security requirements.</p>
+        <div class="deployment-options">
+          <div class="deployment-option">
+            <div class="option-header">
+              <h3>Self-Hosted</h3>
+              <span class="option-badge">Open Source</span>
+            </div>
+            <p>Deploy Enclava on your own infrastructure with full control and customization.</p>
+            <a href="https://github.com/enclava-ai/enclava" class="btn-primary">Deploy self‑hosted</a>
+          </div>
+          <div class="deployment-option">
+            <div class="option-header">
+              <h3>Managed Cloud</h3>
+              <span class="option-badge">Coming Soon</span>
+            </div>
+            <p>Fully managed platform with zero setup. Enterprise-grade security in the cloud.</p>
+            <a href="#waitlist" class="btn-primary">Join cloud waitlist</a>
+          </div>
+          <div class="deployment-option">
+            <div class="option-header">
+              <h3>Custom Deployment</h3>
+              <span class="option-badge">Professional Services</span>
+            </div>
+            <p>Need custom integrations, migration help, or dedicated support? Let's talk.</p>
+            <a href="https://cal.com/aljaz/enclava" class="btn-primary">Book consultation</a>
+          </div>
         </div>
       </div>
     </div>
@@ -404,6 +427,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .email-input:focus { border-color: #00d4ff; background: rgba(255, 255, 255, 0.08); }
   .waitlist-note { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin-top: 20px; }
   
+  /* Cloud Features */
+  .cloud-features { display: flex; justify-content: center; gap: 24px; margin: 32px 0; flex-wrap: wrap; }
+  .feature-highlight { display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 24px; color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; font-weight: 500; }
+  
   /* Form feedback styles */
   .form-message { margin-top: 16px; padding: 12px 20px; border-radius: 6px; font-size: 0.95rem; text-align: center; }
   .form-message.success { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); }
@@ -413,6 +440,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* Honeypot field (hidden from users but visible to bots) */
   .honeypot { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; pointer-events: none; }
+
+  /* CTA Section */
+  .cta { padding: 120px 0; text-align: center; }
+  .cta-content { max-width: 1200px; margin: 0 auto; }
+  .cta h2 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .cta p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 60px; line-height: 1.6; }
+  
+  /* Deployment Options */
+  .deployment-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 60px; }
+  .deployment-option { padding: 40px 32px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .deployment-option::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.3) 50%, transparent 100%); }
+  .deployment-option:hover { transform: translateY(-4px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border-color: rgba(0, 212, 255, 0.3); }
+  .option-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .option-header h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin: 0; }
+  .option-badge { padding: 6px 12px; background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 12px; color: #00ff88; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .deployment-option p { color: rgba(255, 255, 255, 0.7); font-size: 1rem; line-height: 1.5; margin-bottom: 24px; }
+  .deployment-option .btn-primary { width: 100%; justify-content: center; }
   
   /* Screen reader only content */
   .sr-only {
@@ -489,17 +533,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .waitlist-form .btn-primary { width: 100%; min-height: 48px; }
     
+    /* Cloud Features Mobile */
+    .cloud-features { flex-direction: column; gap: 16px; align-items: center; }
+    .feature-highlight { justify-content: center; }
+    
     /* CTA Section Mobile */
     .cta h2 { font-size: 2.2rem; margin-bottom: 16px; }
     .cta p { font-size: 1.1rem; margin-bottom: 32px; }
-    .cta-actions { 
-      flex-direction: column; 
-      gap: 16px; 
-      align-items: center;
+    .deployment-options { 
+      grid-template-columns: 1fr; 
+      gap: 24px; 
+      margin-top: 40px;
     }
-    .cta-actions .btn-primary { 
-      width: 100%; 
-      max-width: 280px; 
+    .deployment-option { 
+      padding: 32px 24px;
+    }
+    .option-header { 
+      flex-direction: column; 
+      align-items: flex-start; 
+      gap: 8px; 
+    }
+    .deployment-option .btn-primary { 
       min-height: 48px; 
     }
     
