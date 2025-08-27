@@ -4,142 +4,166 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Enclava: Private AI without trade‑offs">
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
       <div class="nav-content">
         <div class="logo">
-          <span class="gradient-text">Enclava</span>
+          <a href="/" aria-label="Enclava - Home">
+            <span class="gradient-text">Enclava</span>
+          </a>
         </div>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#why-choose">Why Enclava</a>
-          <div class="nav-dropdown">
-            <a href="#" class="nav-dropdown-toggle">Resources <span class="dropdown-arrow">▾</span></a>
-            <div class="nav-dropdown-menu">
-              <a href="https://docs.enclava.ai" target="_blank" class="nav-dropdown-item">Documentation</a>
-              <a href="https://github.com/enclava-ai/enclava" target="_blank" class="nav-dropdown-item">Source Code</a>
+        <div class="nav-links" role="menubar">
+          <a href="#features" role="menuitem">Features</a>
+          <a href="#why-choose" role="menuitem">Why Enclava</a>
+          <div class="nav-dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" class="nav-dropdown-toggle" aria-expanded="false" role="button">Resources <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Documentation</a>
+              <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Source Code</a>
             </div>
           </div>
-          <a href="#contact" class="btn-primary">Get started</a>
+          <a href="#contact" class="btn-primary" role="button">Get started</a>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" type="button">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
         </button>
       </div>
-      <div class="mobile-menu">
-        <a href="#features" class="mobile-menu-item">Features</a>
-        <a href="#why-choose" class="mobile-menu-item">Why Enclava</a>
+      <div class="mobile-menu" role="menu" aria-label="Mobile navigation menu">
+        <a href="#features" class="mobile-menu-item" role="menuitem">Features</a>
+        <a href="#why-choose" class="mobile-menu-item" role="menuitem">Why Enclava</a>
         <div class="mobile-menu-section">
           <div class="mobile-menu-label">Resources</div>
-          <a href="https://docs.enclava.ai" target="_blank" class="mobile-menu-item mobile-menu-subitem">Documentation</a>
-          <a href="https://github.com/enclava-ai/enclava" target="_blank" class="mobile-menu-item mobile-menu-subitem">Source Code</a>
+          <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Documentation</a>
+          <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Source Code</a>
         </div>
-        <a href="#contact" class="mobile-menu-item btn-primary">Get started</a>
+        <a href="#contact" class="mobile-menu-item btn-primary" role="button">Get started</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Making Private AI practical
-        </h1>
-        <p class="hero-description">
-          Run AI on sensitive data—without exposing it. Enclava executes your prompts, tools, and RAG pipelines inside confidential computing enclaves so data stays encrypted in use, at rest, and in transit.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Deploy on‑prem</a>
-          <a href="#waitlist" class="btn-primary">Join waitlist</a>
-          <a href="#features" class="btn-primary">Explore features</a>
+  <main>
+    <section class="hero" role="banner" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title">
+            Making Private AI Practical
+          </h1>
+          <p class="hero-description">
+            Run AI on sensitive data—without exposing it. Enclava executes your prompts, tools, and RAG pipelines inside confidential computing enclaves so data stays encrypted in use, at rest, and in transit.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary" role="button" aria-describedby="deploy-desc">Deploy on‑prem</a>
+            <a href="#waitlist" class="btn-primary" role="button" aria-describedby="waitlist-desc">Join waitlist</a>
+            <a href="#features" class="btn-primary" role="button" aria-describedby="features-desc">Explore features</a>
+          </div>
+          <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">
+            <span aria-label="Key benefits">Open source • Privacy‑first architecture • On‑prem or private cloud</span>
+          </p>
+          <!-- Screen reader descriptions -->
+          <div class="sr-only">
+            <p id="deploy-desc">Learn about self-hosted deployment options</p>
+            <p id="waitlist-desc">Join our cloud platform waitlist for early access</p>
+            <p id="features-desc">Discover Enclava's privacy-focused AI features</p>
+          </div>
         </div>
-        <p class="hero-subnote" style="margin-top:16px;opacity:.7;font-size:.95rem">Open source • Privacy‑first architecture • On‑prem or private cloud</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features Overview -->
-  <section id="features" class="features-overview section">
-    <div class="container">
-      <h2 class="section-title">
-        What you can build
-      </h2>
-      <p class="section-subtitle">
-        Real workloads teams run on Enclava today—secure by default, developer‑friendly by design.
-      </p>
+    <!-- Features Overview -->
+    <section id="features" class="features-overview section" role="main" aria-labelledby="features-title">
+      <div class="container">
+        <header>
+          <h2 id="features-title" class="section-title">
+            What you can build
+          </h2>
+          <p class="section-subtitle">
+            Real workloads teams run on Enclava today—secure by default, developer‑friendly by design.
+          </p>
+        </header>
       
-      <div class="features-grid">
-        <!-- Intelligent Chatbot Ecosystem -->
-        <div class="feature-card card">
-          <h3>AI chatbots</h3>
-          <ul>
-            <li>Assistants with access to your knowledge base</li>
-            <li>Connect to files, wikis, databases, and internal tools</li>
-            <li>Create personas per team or use case with policy controls</li>
-            <li>Prompts, history, and embeddings remain encrypted</li>
-          </ul>
-        </div>
+        <div class="features-grid" role="region" aria-label="Product features">
+          <!-- AI Chatbots -->
+          <article class="feature-card card" role="article" aria-labelledby="chatbots-title">
+            <header>
+              <h3 id="chatbots-title">AI Chatbots</h3>
+            </header>
+            <ul role="list" aria-label="AI chatbot features">
+              <li>Assistants with access to your knowledge base</li>
+              <li>Connect to files, wikis, databases, and internal tools</li>
+              <li>Create personas per team or use case with policy controls</li>
+              <li>Prompts, history, and embeddings remain encrypted</li>
+            </ul>
+          </article>
 
-        <!-- Advanced Document Intelligence -->
-        <div class="feature-card card">
-          <h3>Document processing</h3>
-          <ul>
-            <li>Ingest PDFs, Office docs, emails, and text at scale</li>
-            <li>Ask questions and get cited answers with source links</li>
-            <li>Organize into secure collections with role‑based access</li>
-            <li>Sub‑second semantic search across your private corpus</li>
-          </ul>
-        </div>
+          <!-- Document Processing -->
+          <article class="feature-card card" role="article" aria-labelledby="documents-title">
+            <header>
+              <h3 id="documents-title">Document Processing</h3>
+            </header>
+            <ul role="list" aria-label="Document processing features">
+              <li>Ingest PDFs, Office docs, emails, and text at scale</li>
+              <li>Ask questions and get cited answers with source links</li>
+              <li>Organize into secure collections with role‑based access</li>
+              <li>Sub‑second semantic search across your private corpus</li>
+            </ul>
+          </article>
 
-        <!-- Plugin & Integrations -->
-        <div class="feature-card card">
-          <h3>Plugins & integrations</h3>
-          <ul>
-            <li>Build secure tools with a lightweight SDK</li>
-            <li>Key budgeting, rate limits, and granular access per workspace</li>
-            <li>Drop‑in connectors for Slack, Jira, GitHub, Notion, and more</li>
-          </ul>
-        </div>
+          <!-- Plugins & Integrations -->
+          <article class="feature-card card" role="article" aria-labelledby="plugins-title">
+            <header>
+              <h3 id="plugins-title">Plugins & Integrations</h3>
+            </header>
+            <ul role="list" aria-label="Plugin and integration features">
+              <li>Build secure tools with a lightweight SDK</li>
+              <li>Key budgeting, rate limits, and granular access per workspace</li>
+              <li>Drop‑in connectors for Slack, Jira, GitHub, Notion, and more</li>
+            </ul>
+          </article>
 
-        <!-- Confidential Environment -->
-        <div class="feature-card card">
-          <h3>Confidential computing</h3>
-          <ul>
-            <li>Run models and RAG inside trusted execution environments (TEEs)</li>
-            <li>Memory and storage are encrypted by default</li>
-            <li>Remote attestation to verify code and environment</li>
-            <li>Operational model where even we can’t access your data</li>
-          </ul>
-        </div>
+          <!-- Confidential Computing -->
+          <article class="feature-card card" role="article" aria-labelledby="confidential-title">
+            <header>
+              <h3 id="confidential-title">Confidential Computing</h3>
+            </header>
+            <ul role="list" aria-label="Confidential computing features">
+              <li>Run models and RAG inside trusted execution environments (TEEs)</li>
+              <li>Memory and storage are encrypted by default</li>
+              <li>Remote attestation to verify code and environment</li>
+              <li>Operational model where even we can't access your data</li>
+            </ul>
+          </article>
 
-        <!-- Workflow Automation Engine -->
-        <div class="feature-card card">
+          <!-- Workflows -->
+          <article class="feature-card card" role="article" aria-labelledby="workflows-title">
+            <header>
+              <h3 id="workflows-title">Workflows</h3>
+            </header>
+            <ul role="list" aria-label="Workflow features">
+              <li>Orchestrate multi‑step agents, tools, and retrieval</li>
+              <li>Parallel execution, retries, and idempotency built‑in</li>
+              <li>Transform data between steps with typed adapters</li>
+              <li>Schedule runs or trigger via webhooks</li>
+            </ul>
+          </article>
 
-          <h3>Workflows</h3>
-          <ul>
-            <li>Orchestrate multi‑step agents, tools, and retrieval</li>
-            <li>Parallel execution, retries, and idempotency built‑in</li>
-            <li>Transform data between steps with typed adapters</li>
-            <li>Schedule runs or trigger via webhooks</li>
-          </ul>
-        </div>
-
-        <!-- Developer-First APIs -->
-        <div class="feature-card card">
-          <h3>Developer APIs</h3>
-          <ul>
-            <li>OpenAI‑compatible endpoints for chat, RAG, and embeddings</li>
-            <li>REST APIs for everything, with simple auth</li>
-            <li>Usage, cost, and performance visibility per project</li>
-            <li>Extend the platform with custom plugins</li>
-          </ul>
+          <!-- Developer APIs -->
+          <article class="feature-card card" role="article" aria-labelledby="apis-title">
+            <header>
+              <h3 id="apis-title">Developer APIs</h3>
+            </header>
+            <ul role="list" aria-label="Developer API features">
+              <li>OpenAI‑compatible endpoints for chat, RAG, and embeddings</li>
+              <li>REST APIs for everything, with simple auth</li>
+              <li>Usage, cost, and performance visibility per project</li>
+              <li>Extend the platform with custom plugins</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- Perfect For Section -->
   <section class="perfect-for section">
@@ -389,26 +413,128 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* Honeypot field (hidden from users but visible to bots) */
   .honeypot { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; pointer-events: none; }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
 
   /* Responsive adjustments */
+  /* Enhanced Mobile Responsiveness */
   @media (max-width: 768px) {
-    .hero-actions { flex-direction: column; gap: 16px; }
-    .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; max-width: 280px; }
-    .email-signup { flex-direction: column; }
-    .email-input { margin-bottom: 16px; }
+    /* Navigation Mobile Improvements */
+    .nav-links { display: none; }
+    .mobile-menu-toggle { display: flex; }
+    .nav-content { padding: 12px 0; }
+    
+    /* Hero Section Mobile */
+    .hero { min-height: 100vh; padding: 80px 0 40px; }
+    .hero-container { padding: 0 20px; }
+    .hero-title { font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; }
+    .hero-description { font-size: 1.1rem; margin-bottom: 32px; }
+    .hero-actions { flex-direction: column; gap: 16px; align-items: center; }
+    .hero-actions .btn-primary { width: 100%; max-width: 280px; min-height: 48px; font-size: 16px; }
+    
+    /* Features Grid Mobile */
+    .features-grid { 
+      grid-template-columns: 1fr; 
+      gap: 24px; 
+      margin-top: 40px; 
+    }
+    .feature-card { 
+      transform: translateY(0) !important; 
+      margin-bottom: 16px;
+    }
+    .feature-card:hover { transform: translateY(-4px) !important; }
+    .feature-card h3 { font-size: 1.2rem; }
+    .feature-card li { font-size: 0.95rem; line-height: 1.4; }
+    
+    /* Section Titles Mobile */
+    .section-title { font-size: 2.2rem; margin-bottom: 16px; }
+    .section-subtitle { font-size: 1.1rem; margin-bottom: 40px; }
     
     /* Perfect For Mobile */
-    .perfect-for-title { font-size: 2.2rem; }
-    .perfect-for-item { flex-direction: column; text-align: center; gap: 20px; padding: 24px; }
+    .perfect-for-title { font-size: 2.2rem; margin-bottom: 40px; }
+    .perfect-for-item { 
+      flex-direction: column; 
+      text-align: center; 
+      gap: 20px; 
+      padding: 24px 20px; 
+    }
     .perfect-for-item .item-content h3 { font-size: 1.2rem; }
-    .perfect-for-item .item-content p { font-size: 1rem; }
+    .perfect-for-item .item-content p { font-size: 1rem; line-height: 1.4; }
+    .check-icon { width: 40px; height: 40px; font-size: 1.2rem; }
     
     /* Why Choose Mobile */
-    .why-choose-grid { grid-template-columns: 1fr; gap: 32px; }
-    .why-card-large { padding: 32px 24px; }
-    .why-card-large h3 { font-size: 1.4rem; }
-    .why-card-large p { font-size: 1rem; }
-    .why-number { width: 48px; height: 48px; font-size: 1.3rem; }
+    .why-choose-grid { grid-template-columns: 1fr; gap: 24px; }
+    .why-card-large { padding: 28px 20px; }
+    .why-card-large h3 { font-size: 1.3rem; line-height: 1.2; }
+    .why-card-large p { font-size: 1rem; line-height: 1.5; }
+    .why-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    
+    /* Waitlist Mobile */
+    .waitlist h2 { font-size: 2.2rem; margin-bottom: 16px; }
+    .waitlist p { font-size: 1.1rem; margin-bottom: 32px; }
+    .email-signup { flex-direction: column; gap: 12px; }
+    .email-input { 
+      margin-bottom: 0; 
+      min-height: 48px; 
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    .waitlist-form .btn-primary { width: 100%; min-height: 48px; }
+    
+    /* CTA Section Mobile */
+    .cta h2 { font-size: 2.2rem; margin-bottom: 16px; }
+    .cta p { font-size: 1.1rem; margin-bottom: 32px; }
+    .cta-actions { 
+      flex-direction: column; 
+      gap: 16px; 
+      align-items: center;
+    }
+    .cta-actions .btn-primary { 
+      width: 100%; 
+      max-width: 280px; 
+      min-height: 48px; 
+    }
+    
+    /* Footer Mobile */
+    .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-social { justify-content: center; }
+  }
+  
+  @media (max-width: 480px) {
+    /* Extra Small Mobile */
+    .hero-title { font-size: 2.4rem; }
+    .hero-description { font-size: 1.05rem; }
+    .section-title { font-size: 1.9rem; }
+    .section-subtitle { font-size: 1rem; }
+    
+    .feature-card { padding: 20px 16px; }
+    .perfect-for-item { padding: 20px 16px; }
+    .why-card-large { padding: 24px 16px; }
+    
+    /* Improve touch targets */
+    .mobile-menu-item { 
+      min-height: 48px; 
+      display: flex; 
+      align-items: center; 
+    }
+    
+    /* Optimize forms for small screens */
+    .email-input { padding: 16px; }
+  }
+  
+  @media (max-width: 768px) and (orientation: landscape) {
+    /* Landscape mobile optimizations */
+    .hero { min-height: 100vh; padding: 60px 0 30px; }
+    .hero-title { font-size: 2.5rem; }
+    .section { padding: 50px 0; }
   }
 
   /* Footer */
@@ -430,97 +556,263 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+  // Performance optimized script with lazy loading and throttling
+  (function() {
+    'use strict';
+    
+    // Performance helper functions
+    function throttle(func, limit) {
+      let inThrottle;
+      return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+          func.apply(context, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      }
+    }
+    
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initMobileMenu();
+      initWaitlistForm();
+      initPerformanceOptimizations();
+    });
+    
+    // Mobile menu functionality
+    function initMobileMenu() {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
 
-    if (mobileMenuToggle && mobileMenu) {
-      mobileMenuToggle.addEventListener('click', function() {
-        mobileMenuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-      });
+      if (!mobileMenuToggle || !mobileMenu) return;
 
+      // Toggle menu with proper ARIA attributes
+      function toggleMenu(open) {
+        const isOpen = open !== undefined ? open : !mobileMenu.classList.contains('active');
+        
+        mobileMenuToggle.classList.toggle('active', isOpen);
+        mobileMenu.classList.toggle('active', isOpen);
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen.toString());
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      mobileMenuToggle.addEventListener('click', () => toggleMenu());
+
+      // Close menu when clicking menu items
       mobileMenuItems.forEach(item => {
-        item.addEventListener('click', function() {
-          mobileMenuToggle.classList.remove('active');
-          mobileMenu.classList.remove('active');
-        });
+        item.addEventListener('click', () => toggleMenu(false));
       });
 
-      document.addEventListener('click', function(e) {
-        const target = e.target as Node;
-        if (target && !mobileMenuToggle.contains(target) && !mobileMenu.contains(target)) {
-          mobileMenuToggle.classList.remove('active');
-          mobileMenu.classList.remove('active');
+      // Close menu when clicking outside (throttled for performance)
+      const handleOutsideClick = throttle(function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+          toggleMenu(false);
+        }
+      }, 100);
+      
+      document.addEventListener('click', handleOutsideClick);
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          toggleMenu(false);
+          mobileMenuToggle.focus();
         }
       });
     }
 
-    // Waitlist form handling
-    const waitlistForm = document.getElementById('waitlist-form') as HTMLFormElement;
-    const formMessage = document.getElementById('form-message') as HTMLElement;
-    const buttonText = document.querySelector('.button-text') as HTMLElement;
-    const loadingSpinner = document.querySelector('.loading-spinner') as HTMLElement;
+    // Waitlist form with enhanced error handling and validation
+    function initWaitlistForm() {
+      const waitlistForm = document.getElementById('waitlist-form');
+      const formMessage = document.getElementById('form-message');
+      const buttonText = document.querySelector('.button-text');
+      const loadingSpinner = document.querySelector('.loading-spinner');
+      const emailInput = waitlistForm?.querySelector('input[name="email"]');
 
-    if (waitlistForm && formMessage && buttonText && loadingSpinner) {
+      if (!waitlistForm || !formMessage || !buttonText || !loadingSpinner) return;
+
+      // Email validation
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      
+      // Real-time email validation
+      if (emailInput) {
+        const validateEmail = debounce(function() {
+          const email = emailInput.value.trim();
+          const isValid = !email || isValidEmail(email);
+          
+          emailInput.style.borderColor = isValid ? '' : '#ff5252';
+          emailInput.setAttribute('aria-invalid', (!isValid).toString());
+        }, 300);
+        
+        emailInput.addEventListener('input', validateEmail);
+      }
+
       waitlistForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const formData = new FormData(waitlistForm);
-        const email = formData.get('email');
+        const email = formData.get('email')?.toString().trim();
         const honeypot = formData.get('honeypot');
         
-        // Show loading state
-        buttonText.style.display = 'none';
-        loadingSpinner.style.display = 'inline';
-        formMessage.style.display = 'none';
+        // Client-side validation
+        if (!email || !isValidEmail(email)) {
+          showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Bot detection
+        if (honeypot) {
+          showMessage('Thank you for your submission.', 'success');
+          return;
+        }
+        
+        setLoadingState(true);
         
         try {
-          // Get Google Apps Script URL from environment variable
           const scriptUrl = import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL;
           
           if (!scriptUrl) {
-            throw new Error('Google Apps Script URL not configured');
+            throw new Error('Configuration error. Please try again later.');
           }
+          
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
           
           const response = await fetch(scriptUrl, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-              email: email,
-              honeypot: honeypot,
+              email,
+              honeypot,
               origin: window.location.origin,
-              timestamp: new Date().toISOString()
-            })
+              timestamp: new Date().toISOString(),
+              userAgent: navigator.userAgent.substring(0, 100) // Limited for privacy
+            }),
+            signal: controller.signal
           });
+          
+          clearTimeout(timeoutId);
+          
+          if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+          }
           
           const result = await response.json();
           
-          // Show result message
-          formMessage.style.display = 'block';
           if (result.success) {
-            formMessage.className = 'form-message success';
-            formMessage.textContent = result.message || 'Successfully joined waitlist!';
+            showMessage(result.message || 'Successfully joined the waitlist!', 'success');
             waitlistForm.reset();
+            
+            // Optional: Track conversion for analytics
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL' });
+            }
           } else {
-            formMessage.className = 'form-message error';
-            formMessage.textContent = result.message || 'Something went wrong. Please try again.';
+            showMessage(result.message || 'Something went wrong. Please try again.', 'error');
           }
           
         } catch (error) {
           console.error('Form submission error:', error);
-          formMessage.style.display = 'block';
-          formMessage.className = 'form-message error';
-          formMessage.textContent = 'Network error. Please check your connection and try again.';
+          
+          let errorMessage = 'Network error. Please check your connection and try again.';
+          
+          if (error.name === 'AbortError') {
+            errorMessage = 'Request timed out. Please try again.';
+          } else if (error.message.includes('Configuration error')) {
+            errorMessage = error.message;
+          }
+          
+          showMessage(errorMessage, 'error');
         } finally {
-          // Restore button state
-          buttonText.style.display = 'inline';
-          loadingSpinner.style.display = 'none';
+          setLoadingState(false);
         }
       });
+      
+      function setLoadingState(loading) {
+        buttonText.style.display = loading ? 'none' : 'inline';
+        loadingSpinner.style.display = loading ? 'inline' : 'none';
+        waitlistForm.querySelector('button[type="submit"]').disabled = loading;
+      }
+      
+      function showMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        
+        // Announce to screen readers
+        formMessage.setAttribute('role', type === 'error' ? 'alert' : 'status');
+        formMessage.setAttribute('aria-live', 'polite');
+        
+        // Auto-hide success messages after 5 seconds
+        if (type === 'success') {
+          setTimeout(() => {
+            if (formMessage.className.includes('success')) {
+              formMessage.style.display = 'none';
+            }
+          }, 5000);
+        }
+      }
     }
-  });
+    
+    // Performance optimizations
+    function initPerformanceOptimizations() {
+      // Optimize animations for low-end devices
+      if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+        document.documentElement.style.setProperty('--animation-duration', '0.1s');
+      }
+      
+      // Lazy load non-critical images when they come into view
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+              observer.unobserve(img);
+            }
+          });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      }
+      
+      // Optimize scroll performance
+      let ticking = false;
+      function updateScrollState() {
+        // Add scroll-based optimizations here if needed
+        ticking = false;
+      }
+      
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(updateScrollState);
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+  })();
 </script>

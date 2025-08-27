@@ -2,22 +2,121 @@
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
 }
 
-const { title, description = "Enclava: Enterprise AI Platform putting customer privacy first" } = Astro.props;
+const { 
+  title, 
+  description = "Run AI on sensitive data—without exposing it. Enclava executes your prompts, tools, and RAG pipelines inside confidential computing enclaves so data stays encrypted in use, at rest, and in transit.",
+  keywords = "private AI, confidential computing, secure AI, enterprise AI, data privacy, encrypted AI, on-premise AI, TEE, trusted execution environment, privacy-first AI",
+  image = "/og-image.png",
+  url = "https://enclava.ai"
+} = Astro.props;
+
+// Generate canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+
+// Structured data for the organization
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Enclava",
+  "description": description,
+  "url": url,
+  "logo": `${url}/favicon.svg`,
+  "sameAs": [
+    "https://github.com/enclava-ai",
+    "https://www.linkedin.com/company/enclava-ai/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "url": `${url}#contact`
+  },
+  "foundingDate": "2023",
+  "industry": "Artificial Intelligence",
+  "keywords": keywords,
+  "offers": {
+    "@type": "Service",
+    "name": "Private AI Platform",
+    "description": "Confidential computing platform for running AI workloads on sensitive data",
+    "category": "AI/Machine Learning Software"
+  }
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Enclava" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Viewport and Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Enclava" />
+    <meta name="application-name" content="Enclava" />
+    <meta name="msapplication-TileColor" content="#0a0f1c" />
+    <meta name="theme-color" content="#0a0f1c" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Enclava" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site).href} />
+    <meta property="twitter:creator" content="@enclava_ai" />
+    <meta property="twitter:site" content="@enclava_ai" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Icons and Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#00d4ff" />
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts with display=swap for performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   </head>
   <body>
     <slot />
@@ -251,6 +350,7 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
           0 2px 0 rgba(255, 255, 255, 0.06);
       }
 
+      /* Enhanced Mobile Responsiveness */
       @media (max-width: 768px) {
         .container {
           padding: 0 16px;
@@ -262,6 +362,72 @@ const { title, description = "Enclava: Enterprise AI Platform putting customer p
         
         .card {
           padding: 24px;
+          border-radius: 16px;
+        }
+        
+        .btn-primary {
+          min-height: 44px; /* Touch-friendly minimum size */
+          padding: 16px 24px;
+          font-size: 16px; /* Prevent zoom on iOS */
+          border-radius: 8px;
+        }
+        
+        /* Improve text readability on mobile */
+        body {
+          font-size: 16px; /* Prevent zoom on iOS */
+          line-height: 1.6;
+        }
+        
+        /* Optimize gradient animations for mobile performance */
+        .gradient-text {
+          animation-duration: 12s; /* Slower animation for better mobile performance */
+        }
+        
+        body::before {
+          animation-duration: 30s; /* Slower ambient animation */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 12px;
+        }
+        
+        .section {
+          padding: 40px 0;
+        }
+        
+        .card {
+          padding: 20px;
+        }
+        
+        .btn-primary {
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
+        }
+      }
+      
+      /* High DPI displays optimization */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .gradient-text {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+      
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .gradient-text {
+          animation: none;
+        }
+        
+        body::before {
+          animation: none;
+        }
+        
+        .btn-primary {
+          transition: none;
         }
       }
     </style>

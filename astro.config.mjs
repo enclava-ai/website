@@ -6,11 +6,24 @@ export default defineConfig({
   site: 'https://enclava.ai',
   base: '/',
   build: {
-    assets: '_astro'
+    assets: '_astro',
+    inlineStylesheets: 'auto'
   },
   vite: {
     build: {
-      assetsInlineLimit: 0
+      assetsInlineLimit: 4096, // Inline small assets for better performance
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['astro']
+          }
+        }
+      }
+    },
+    ssr: {
+      noExternal: []
     }
-  }
+  },
+  compressHTML: true
 });
