@@ -16,6 +16,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a href="#features" role="menuitem">Features</a>
           <a href="#why-choose" role="menuitem">Why Enclava</a>
           <div class="nav-dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" class="nav-dropdown-toggle" aria-expanded="false" role="button">Products <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/products/self-hosted" class="nav-dropdown-item" role="menuitem">Self hosted</a>
+              <a href="/products/managed-cloud" class="nav-dropdown-item" role="menuitem">Managed cloud <span style="opacity: 0.6; font-size: 0.85em;">(coming soon)</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" class="nav-dropdown-toggle" aria-expanded="false" role="button">Services <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/services/custom-deployment" class="nav-dropdown-item" role="menuitem">Custom deployment</a>
+              <a href="/services/integration-development" class="nav-dropdown-item" role="menuitem">Integration development</a>
+            </div>
+          </div>
+          <div class="nav-dropdown" role="menuitem" aria-haspopup="true">
             <a href="#" class="nav-dropdown-toggle" aria-expanded="false" role="button">Resources <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
             <div class="nav-dropdown-menu" role="menu">
               <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item" role="menuitem">Documentation</a>
@@ -33,6 +47,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="mobile-menu" role="menu" aria-label="Mobile navigation menu">
         <a href="#features" class="mobile-menu-item" role="menuitem">Features</a>
         <a href="#why-choose" class="mobile-menu-item" role="menuitem">Why Enclava</a>
+        <div class="mobile-menu-section">
+          <div class="mobile-menu-label">Products</div>
+          <a href="/products/self-hosted" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Self hosted</a>
+          <a href="/products/managed-cloud" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Managed cloud <span style="opacity: 0.6; font-size: 0.85em;">(coming soon)</span></a>
+        </div>
+        <div class="mobile-menu-section">
+          <div class="mobile-menu-label">Services</div>
+          <a href="/services/custom-deployment" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Custom deployment</a>
+          <a href="/services/integration-development" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Integration development</a>
+        </div>
         <div class="mobile-menu-section">
           <div class="mobile-menu-label">Resources</div>
           <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer" class="mobile-menu-item mobile-menu-subitem" role="menuitem">Documentation</a>
@@ -333,20 +357,124 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 15, 28, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000; }
   .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
   .logo { font-size: 24px; font-weight: 700; }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-  .nav-links a:not(.btn-primary):hover { color: #00d4ff; }
+  .nav-links { 
+    display: flex; 
+    gap: 24px; 
+    align-items: center; 
+  }
+  
+  .nav-links > a:not(.btn-primary) { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+    padding: 12px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  
+  .nav-links > a:not(.btn-primary):hover { 
+    color: #00d4ff; 
+    background: rgba(0, 212, 255, 0.05);
+  }
 
   /* Navigation Dropdown */
-  .nav-dropdown { position: relative; }
-  .nav-dropdown-toggle { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; cursor: pointer; }
-  .nav-dropdown-toggle:hover { color: #00d4ff; }
-  .dropdown-arrow { font-size: 0.8em; margin-left: 4px; transition: transform 0.3s ease; }
-  .nav-dropdown:hover .dropdown-arrow { transform: rotate(180deg); }
-  .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(10, 15, 28, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; min-width: 180px; padding: 8px 0; opacity: 0; visibility: hidden; transition: all 0.3s ease; margin-top: 8px; }
-  .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
-  .nav-dropdown-item { display: block; padding: 12px 20px; color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 400; transition: all 0.3s ease; border-bottom: none; }
-  .nav-dropdown-item:hover { color: #00d4ff; background: rgba(0, 212, 255, 0.1); }
+  .nav-dropdown { 
+    position: relative; 
+    display: inline-block;
+  }
+  
+  .nav-dropdown-toggle { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown-toggle:hover { 
+    color: #00d4ff; 
+    background: rgba(0, 212, 255, 0.05);
+  }
+  
+  .dropdown-arrow { 
+    font-size: 0.8em; 
+    margin-left: 8px; 
+    transition: transform 0.3s ease; 
+    display: inline-block;
+  }
+  
+  .nav-dropdown.active .dropdown-arrow { 
+    transform: rotate(180deg); 
+  }
+  
+  .nav-dropdown-menu { 
+    position: absolute; 
+    top: calc(100% + 12px); 
+    left: 0; 
+    background: rgba(10, 15, 28, 0.98); 
+    backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 12px; 
+    min-width: 220px; 
+    padding: 8px 0; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    z-index: 1001;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
+  
+  .nav-dropdown.active .nav-dropdown-menu { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .nav-dropdown-item { 
+    display: block; 
+    padding: 12px 20px; 
+    color: rgba(255, 255, 255, 0.9); 
+    text-decoration: none; 
+    font-weight: 400; 
+    transition: all 0.3s ease; 
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown-item:hover { 
+    color: #00d4ff; 
+    background: rgba(0, 212, 255, 0.1); 
+    padding-left: 24px;
+  }
+  
+  .nav-dropdown-item:first-child { 
+    border-radius: 8px 8px 0 0; 
+  }
+  
+  .nav-dropdown-item:last-child { 
+    border-radius: 0 0 8px 8px; 
+  }
+  
+  /* Position dropdowns to avoid overlap */
+  .nav-dropdown:nth-child(3) .nav-dropdown-menu { 
+    left: 0;
+  }
+  
+  .nav-dropdown:nth-child(4) .nav-dropdown-menu { 
+    left: -50%;
+  }
+  
+  .nav-dropdown:nth-child(5) .nav-dropdown-menu { 
+    left: -100%;
+  }
 
   /* Mobile Navigation */
   .mobile-menu-toggle { display: none; flex-direction: column; justify-content: space-around; width: 24px; height: 24px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
@@ -354,14 +482,78 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
   .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-  .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 15, 28, 0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 0; z-index: 1000; }
-  .mobile-menu.active { display: block; }
-  .mobile-menu-item { display: block; padding: 12px 20px; color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  .mobile-menu-item:not(.btn-primary):hover { color: #00d4ff; background: rgba(0, 212, 255, 0.1); }
-  .mobile-menu-item.btn-primary { margin: 16px 20px 0; text-align: center; border-radius: 8px; border-bottom: none; }
-  .mobile-menu-section { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  .mobile-menu-label { padding: 12px 20px; color: rgba(255, 255, 255, 0.6); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: none; }
-  .mobile-menu-subitem { padding-left: 40px; color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; border-bottom: none; }
+  .mobile-menu { 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+    background: rgba(10, 15, 28, 0.98); 
+    backdrop-filter: blur(15px); 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 20px 0; 
+    z-index: 1000; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .mobile-menu.active { 
+    display: block; 
+  }
+  
+  .mobile-menu-item { 
+    display: block; 
+    padding: 16px 24px; 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: all 0.3s ease; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  }
+  
+  .mobile-menu-item:not(.btn-primary):hover { 
+    color: #00d4ff; 
+    background: rgba(0, 212, 255, 0.1); 
+    padding-left: 28px;
+  }
+  
+  .mobile-menu-item.btn-primary { 
+    margin: 20px 24px 8px; 
+    text-align: center; 
+    border-radius: 8px; 
+    border-bottom: none; 
+    padding: 16px 24px;
+  }
+  
+  .mobile-menu-section { 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    margin-bottom: 8px;
+  }
+  
+  .mobile-menu-label { 
+    padding: 16px 24px 8px; 
+    color: rgba(255, 255, 255, 0.7); 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.8px; 
+    border-bottom: none; 
+    background: rgba(0, 212, 255, 0.05);
+  }
+  
+  .mobile-menu-subitem { 
+    padding-left: 48px; 
+    color: rgba(255, 255, 255, 0.9); 
+    font-size: 0.95rem; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    font-weight: 400;
+    border-left: 2px solid rgba(0, 212, 255, 0.2);
+  }
+  
+  .mobile-menu-subitem:hover {
+    border-left-color: #00d4ff;
+    padding-left: 52px;
+  }
 
   /* Hero Section */
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
@@ -475,6 +667,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     /* Navigation Mobile Improvements */
     .nav-links { display: none; }
     .mobile-menu-toggle { display: flex; }
+    
+    /* Hide desktop dropdowns on mobile */
+    .nav-dropdown-menu { 
+      display: none !important; 
+      opacity: 0 !important; 
+      visibility: hidden !important; 
+    }
     .nav-content { padding: 12px 0; }
     
     /* Hero Section Mobile */
@@ -643,10 +842,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
       initMobileMenu();
+      initDropdownMenus();
       initWaitlistForm();
       initPerformanceOptimizations();
     });
     
+    // Dropdown menu functionality
+    function initDropdownMenus() {
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+      
+      dropdowns.forEach(dropdown => {
+        let hoverTimeout;
+        
+        dropdown.addEventListener('mouseenter', () => {
+          clearTimeout(hoverTimeout);
+          // Close all other dropdowns
+          dropdowns.forEach(other => {
+            if (other !== dropdown) {
+              other.classList.remove('active');
+            }
+          });
+          // Open this dropdown
+          dropdown.classList.add('active');
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+          hoverTimeout = setTimeout(() => {
+            dropdown.classList.remove('active');
+          }, 100); // Small delay to prevent flickering
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+          dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+    }
+
     // Mobile menu functionality
     function initMobileMenu() {
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
