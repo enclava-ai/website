@@ -9,8 +9,8 @@ export interface Props {
 
 const { 
   title, 
-  description = "Run AI on sensitive data—without exposing it. Enclava executes your prompts, tools, and RAG pipelines inside confidential computing enclaves so data stays encrypted in use, at rest, and in transit.",
-  keywords = "private AI, confidential computing, secure AI, enterprise AI, data privacy, encrypted AI, on-premise AI, TEE, trusted execution environment, privacy-first AI",
+  description = "Deploy private AI with Enclava's confidential computing platform. Process sensitive data with encrypted LLMs, secure RAG pipelines, and TEE protection. Open source & enterprise-ready.",
+  keywords = "private AI, confidential computing, secure AI, enterprise AI, data privacy, encrypted AI, on-premise AI, TEE, trusted execution environment, privacy-first AI, HIPAA compliant AI, SOC2 AI platform, Intel SGX, AMD SEV, secure LLM, RAG security",
   image = "/og-image.png",
   url = "https://enclava.ai"
 } = Astro.props;
@@ -18,33 +18,147 @@ const {
 // Generate canonical URL
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
-// Structured data for the organization
-const structuredData = {
+// SEO-optimized title and descriptions per page
+const seoTitles: Record<string, string> = {
+  '/': 'Private AI Platform | Confidential Computing for Enterprise AI - Enclava',
+  '/products/managed-cloud': 'Managed Private AI Cloud | Zero Infrastructure, Full Privacy - Enclava',
+  '/products/self-hosted': 'Self-Hosted Private AI | Open Source Confidential Computing - Enclava',
+  '/services/custom-deployment': 'Enterprise Private AI Deployment | HIPAA & SOC2 Compliant - Enclava',
+  '/services/integration-development': 'Private AI Integration Services | Custom Development - Enclava',
+  '/case-studies/hardware-manufacturer': 'Hardware Manufacturer Private AI Case Study | Enclava',
+  '/case-studies/private-ai-assistant': 'Private AI Assistant Implementation Case Study | Enclava',
+  '/404': '404 - Page Not Found | Enclava'
+};
+
+const seoDescriptions: Record<string, string> = {
+  '/': description,
+  '/products/managed-cloud': 'Enclava Managed Cloud: Private AI as a Service with zero infrastructure overhead. Enterprise-grade confidential computing, 99.9% SLA, SOC2 compliant. Join the waitlist.',
+  '/products/self-hosted': 'Self-host Enclava\'s open-source private AI platform. Complete control over your confidential computing infrastructure with TEE protection.',
+  '/services/custom-deployment': 'Professional Enclava deployment services. Get production-ready private AI in weeks. HIPAA, SOC2 compliance, custom integrations, 24/7 support.',
+  '/services/integration-development': 'Custom private AI integration and development services. Connect Enclava to your existing infrastructure with enterprise-grade security.',
+  '/case-studies/hardware-manufacturer': 'Learn how a leading hardware manufacturer deployed Enclava for secure AI-powered quality control and proprietary design protection.',
+  '/case-studies/private-ai-assistant': 'Discover how Enclava enabled a private AI assistant with complete data privacy for sensitive corporate communications.',
+  '/404': 'The page you\'re looking for doesn\'t exist. Return to Enclava\'s private AI platform homepage.'
+};
+
+const pageTitle = seoTitles[Astro.url.pathname] || title;
+const pageDescription = seoDescriptions[Astro.url.pathname] || description;
+
+// Enhanced structured data with multiple schemas
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://enclava.ai/#organization",
   "name": "Enclava",
-  "description": description,
+  "alternateName": "Enclava AI",
+  "description": "Private AI platform using confidential computing for secure data processing",
   "url": url,
-  "logo": `${url}/favicon.svg`,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${url}/favicon.svg`,
+    "width": "512",
+    "height": "512"
+  },
   "sameAs": [
     "https://github.com/enclava-ai",
-    "https://www.linkedin.com/company/enclava-ai/"
+    "https://www.linkedin.com/company/enclava-ai/",
+    "https://twitter.com/enclava_ai"
   ],
-  "contactPoint": {
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE",
+    "addressRegion": "Dubai"
+  },
+  "contactPoint": [{
     "@type": "ContactPoint",
     "contactType": "sales",
+    "email": "sales@enclava.ai",
     "url": `${url}#contact`
-  },
+  }],
   "foundingDate": "2023",
+  "founders": [{
+    "@type": "Person",
+    "name": "Aljaz",
+    "url": "https://cal.com/aljaz/enclava"
+  }],
   "industry": "Artificial Intelligence",
-  "keywords": keywords,
+  "keywords": keywords
+};
+
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://enclava.ai/#software",
+  "name": "Enclava Platform",
+  "description": "Private AI platform with confidential computing for secure LLM inference and RAG pipelines",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Linux, Docker, Kubernetes",
   "offers": {
-    "@type": "Service",
-    "name": "Private AI Platform",
-    "description": "Confidential computing platform for running AI workloads on sensitive data",
-    "category": "AI/Machine Learning Software"
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "offerCount": "2",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Self-Hosted",
+        "description": "Open source self-hosted deployment",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Managed Cloud",
+        "description": "Fully managed private AI cloud service",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "Contact for pricing",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  },
+  "featureList": [
+    "Confidential Computing with TEE",
+    "End-to-end Encryption",
+    "Secure RAG Pipelines",
+    "OpenAI-compatible APIs",
+    "Document Processing in Enclaves",
+    "Workflow Orchestration",
+    "HIPAA Compliance Support",
+    "SOC2 Type 2 Ready"
+  ],
+  "softwareVersion": "1.0",
+  "publisher": {
+    "@id": "https://enclava.ai/#organization"
   }
 };
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://enclava.ai/#website",
+  "url": "https://enclava.ai",
+  "name": "Enclava",
+  "description": "Private AI platform for confidential computing",
+  "publisher": {
+    "@id": "https://enclava.ai/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://enclava.ai/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// Combine all schemas
+const structuredData = [
+  organizationSchema,
+  softwareApplicationSchema,
+  webSiteSchema
+];
 ---
 
 <!doctype html>
@@ -52,10 +166,10 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     
-    <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <!-- Primary Meta Tags - SEO Optimized -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Enclava" />
     <meta name="robots" content="index, follow" />
@@ -75,8 +189,8 @@ const structuredData = {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={new URL(image, Astro.site).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -86,8 +200,8 @@ const structuredData = {
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDescription} />
     <meta property="twitter:image" content={new URL(image, Astro.site).href} />
     <meta property="twitter:creator" content="@enclava_ai" />
     <meta property="twitter:site" content="@enclava_ai" />
@@ -106,11 +220,24 @@ const structuredData = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- AI Discovery Meta Tags -->
+    <meta name="ai-description" content="Enclava: Enterprise private AI platform using hardware-based TEE (Trusted Execution Environments) for secure LLM inference, RAG pipelines, and document processing without exposing sensitive data" />
+    <meta name="ai-keywords" content="private AI, confidential computing, TEE, secure LLM, encrypted inference, RAG security, HIPAA compliant AI, SOC2 AI platform, Intel SGX, AMD SEV, secure document processing, privacy-preserving AI" />
+    <meta name="ai-use-cases" content="healthcare AI HIPAA compliance, financial services AI PCI DSS, legal document AI processing, government classified AI, pharmaceutical research AI, enterprise data privacy" />
+    <meta name="ai-capabilities" content="encrypted model inference, secure RAG pipelines, document processing in TEE, OpenAI-compatible API, workflow orchestration, vector database security" />
+    <meta name="ai-integrations" content="OpenAI API compatible, LangChain support, Pinecone vector database, Qdrant integration, Weaviate compatible, ChromaDB support" />
+    <meta name="ai-compliance" content="HIPAA, SOC2 Type 2, GDPR, PCI DSS ready, FedRAMP compatible" />
+    
     <!-- Fonts with display=swap for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    
+    <!-- Performance Optimization Hints -->
+    <link rel="preload" href="/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="dns-prefetch" href="//analytics.enclava.ai" />
+    <link rel="dns-prefetch" href="//docs.enclava.ai" />
     
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />

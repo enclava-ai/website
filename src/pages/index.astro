@@ -261,6 +261,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- FAQ Section - SEO Optimized -->
+  <section id="faq" class="faq section" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="container">
+      <div class="faq-content">
+        <h2 class="gradient-text">Frequently Asked Questions About Private AI</h2>
+        <p class="faq-intro">Learn more about confidential computing, secure AI deployment, and how Enclava protects your sensitive data.</p>
+        
+        <div class="faq-grid">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">What is confidential computing for AI?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Confidential computing uses hardware-based Trusted Execution Environments (TEEs) like Intel SGX and AMD SEV to protect AI models and data during processing. This ensures complete privacy even from cloud providers, system administrators, and potential attackers.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">How does Enclava ensure HIPAA compliance for healthcare AI?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Enclava provides end-to-end encryption, comprehensive audit logging, role-based access controls, and runs all processing in isolated TEEs. This meets all HIPAA technical safeguards for protected health information (PHI), enabling secure AI processing of medical records, patient data, and clinical research.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">Can I self-host Enclava on my own infrastructure?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, Enclava is open source and can be self-hosted on your infrastructure. We provide Docker images, Kubernetes manifests, Terraform modules, and comprehensive deployment guides for on-premise, private cloud, or hybrid deployments.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">What's the difference between Enclava and VPN encryption?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">VPNs only encrypt data in transit between endpoints. Enclava uses TEEs to encrypt data during processing (in use), in addition to encryption at rest and in transit, providing complete protection throughout the entire AI pipeline including model inference and RAG operations.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">Which AI models and LLMs does Enclava support?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Enclava supports any ONNX-compatible model including Llama 2/3, Mistral, Claude, GPT models, and custom fine-tuned models. Our API is OpenAI-compatible for easy integration with existing applications using LangChain, LlamaIndex, or direct API calls.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">How does secure RAG (Retrieval-Augmented Generation) work in Enclava?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Enclava's secure RAG pipelines process documents, embeddings, and vector searches either on your own infrastructure (self hosted) or within TEEs(managed cloud). Your knowledge base remains encrypted, and retrieval operations happen in isolated enclaves, ensuring that sensitive documents are never exposed during augmentation.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">Is Enclava suitable for financial services and PCI DSS compliance?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, Enclava's architecture supports PCI DSS requirements with encrypted processing, access controls, audit logging, and network segmentation. Financial institutions can process payment data, customer information, and transaction records with AI while maintaining compliance.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">What's the performance impact of using confidential computing?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Modern TEE implementations like Intel TDX and AMD SEV-SNP have minimal overhead (typically 5-15%) for most AI workloads. Enclava optimizes enclave operations and supports GPU acceleration where available, ensuring practical performance for production use cases.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">Can Enclava integrate with existing vector databases?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, Enclava uses popular vector database Qdrant. It supports externally managed collections so you can use your own RAG pipeline with Enclava.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name">How do I get started with Enclava?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">You can start with our open-source self-hosted version on GitHub, join the waitlist for our managed cloud service, or book a consultation for custom deployment. We offer comprehensive documentation, deployment guides, and professional services to help you implement private AI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Waitlist Section -->
   <section id="waitlist" class="waitlist section">
     <div class="container">
@@ -606,6 +688,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .why-number { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, #00d4ff, #00ff88); border-radius: 16px; color: #0a0f1c; font-weight: 900; font-size: 1.5rem; margin-bottom: 24px; }
   .why-card-large h3 { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.3; }
   .why-card-large p { color: rgba(255, 255, 255, 0.75); font-size: 1.1rem; line-height: 1.6; margin: 0; }
+
+  /* FAQ Section */
+  .faq { padding: 120px 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%); }
+  .faq-content { max-width: 1200px; margin: 0 auto; }
+  .faq h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; text-align: center; }
+  .faq-intro { text-align: center; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 32px; }
+  .faq-item { padding: 32px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; transition: all 0.3s ease; }
+  .faq-item:hover { transform: translateY(-2px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border-color: rgba(0, 212, 255, 0.2); }
+  .faq-item h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 16px; color: #00d4ff; }
+  .faq-item p { color: rgba(255, 255, 255, 0.8); line-height: 1.7; font-size: 1rem; }
+  @media (max-width: 1024px) { .faq-grid { grid-template-columns: 1fr; } }
 
   /* Waitlist Section */
   .waitlist { padding: 120px 0; text-align: center; }
