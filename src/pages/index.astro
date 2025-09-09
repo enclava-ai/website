@@ -300,7 +300,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
             <h3 itemprop="name">Which AI models and LLMs does Enclava support?</h3>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Enclava supports any ONNX-compatible model including Llama 2/3, Mistral, Claude, GPT models, and custom fine-tuned models. Our API is OpenAI-compatible for easy integration with existing applications using LangChain, LlamaIndex, or direct API calls.</p>
+              <p itemprop="text">Enclava supports variety of open source models - gpt-oss-128b, llama 3.3, gemma3 and qwen2.5 coder</p>
             </div>
           </div>
           
@@ -353,15 +353,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>Get early access to our <strong>fully managed cloud platform</strong>. No infrastructure setup, no maintenance—just secure private AI ready to use.</p>
 
         <div class="waitlist-form">
-          <form id="waitlist-form" class="email-signup">
-            <input type="email" placeholder="Enter your email for cloud access" class="email-input" name="email" required>
-            <!-- Honeypot field for bot detection (hidden from users) -->
-            <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off">
+          <!-- Replace YOUR_FORM_ID with your actual Google Form ID -->
+          <form id="waitlist-form" 
+                class="email-signup"
+                action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" 
+                method="POST" 
+                target="hidden_iframe"
+                onsubmit="return handleFormSubmit();">
+            <!-- Replace YOUR_ENTRY_ID with the entry ID for email field from Google Forms -->
+            <input type="email" 
+                   placeholder="Enter your email for cloud access" 
+                   class="email-input" 
+                   name="entry.YOUR_ENTRY_ID" 
+                   required>
             <button type="submit" class="btn-primary">
               <span class="button-text">Join cloud waitlist</span>
               <span class="loading-spinner" style="display: none;">⟳</span>
             </button>
           </form>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
           <div id="form-message" class="form-message" style="display: none;"></div>
         </div>
         <p class="waitlist-note">Cloud platform only. For self-hosted options, see deployment section below.</p>
@@ -1022,138 +1032,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     }
 
-    // Waitlist form with enhanced error handling and validation
-    function initWaitlistForm() {
+    // Simplified waitlist form handler for Google Forms submission
+    window.handleFormSubmit = function() {
       const waitlistForm = document.getElementById('waitlist-form');
       const formMessage = document.getElementById('form-message');
       const buttonText = document.querySelector('.button-text');
       const loadingSpinner = document.querySelector('.loading-spinner');
-      const emailInput = waitlistForm?.querySelector('input[name="email"]');
-
-      if (!waitlistForm || !formMessage || !buttonText || !loadingSpinner) return;
-
-      // Email validation
-      function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const emailInput = waitlistForm?.querySelector('input[type="email"]');
+      
+      if (!emailInput || !emailInput.value) {
+        return false;
       }
       
-      // Real-time email validation
+      // Show loading state
+      if (buttonText && loadingSpinner) {
+        buttonText.style.display = 'none';
+        loadingSpinner.style.display = 'inline';
+      }
+      
+      // Show success message after a short delay (Google Forms doesn't return a response)
+      setTimeout(function() {
+        if (formMessage) {
+          formMessage.textContent = 'Thank you for joining our waitlist!';
+          formMessage.className = 'form-message success';
+          formMessage.style.display = 'block';
+          formMessage.setAttribute('role', 'status');
+          formMessage.setAttribute('aria-live', 'polite');
+        }
+        
+        // Reset form
+        waitlistForm.reset();
+        
+        // Reset button state
+        if (buttonText && loadingSpinner) {
+          buttonText.style.display = 'inline';
+          loadingSpinner.style.display = 'none';
+        }
+        
+        // Hide success message after 5 seconds
+        setTimeout(function() {
+          if (formMessage) {
+            formMessage.style.display = 'none';
+          }
+        }, 5000);
+        
+        // Optional: Track conversion for analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL' });
+        }
+      }, 1000);
+      
+      // Return true to allow form submission
+      return true;
+    };
+    
+    // Initialize form validation
+    function initWaitlistForm() {
+      const emailInput = document.querySelector('#waitlist-form input[type="email"]');
+      
       if (emailInput) {
-        const validateEmail = debounce(function() {
+        // Email validation on input
+        emailInput.addEventListener('input', function() {
           const email = emailInput.value.trim();
-          const isValid = !email || isValidEmail(email);
+          const isValid = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
           
           emailInput.style.borderColor = isValid ? '' : '#ff5252';
           emailInput.setAttribute('aria-invalid', (!isValid).toString());
-        }, 300);
-        
-        emailInput.addEventListener('input', validateEmail);
-      }
-
-      waitlistForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(waitlistForm);
-        const email = formData.get('email')?.toString().trim();
-        const honeypot = formData.get('honeypot');
-        
-        // Client-side validation
-        if (!email || !isValidEmail(email)) {
-          showMessage('Please enter a valid email address.', 'error');
-          return;
-        }
-        
-        // Bot detection
-        if (honeypot) {
-          showMessage('Thank you for your submission.', 'success');
-          return;
-        }
-        
-        setLoadingState(true);
-        
-        try {
-          const scriptUrl = import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL;
-          
-          if (!scriptUrl) {
-            throw new Error('Configuration error. Please try again later.');
-          }
-          
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-          
-          const response = await fetch(scriptUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-              email,
-              honeypot,
-              origin: window.location.origin,
-              timestamp: new Date().toISOString(),
-              userAgent: navigator.userAgent.substring(0, 100) // Limited for privacy
-            }),
-            signal: controller.signal
-          });
-          
-          clearTimeout(timeoutId);
-          
-          if (!response.ok) {
-            throw new Error(`Server error: ${response.status}`);
-          }
-          
-          const result = await response.json();
-          
-          if (result.success) {
-            showMessage(result.message || 'Successfully joined the waitlist!', 'success');
-            waitlistForm.reset();
-            
-            // Optional: Track conversion for analytics
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL' });
-            }
-          } else {
-            showMessage(result.message || 'Something went wrong. Please try again.', 'error');
-          }
-          
-        } catch (error) {
-          console.error('Form submission error:', error);
-          
-          let errorMessage = 'Network error. Please check your connection and try again.';
-          
-          if (error.name === 'AbortError') {
-            errorMessage = 'Request timed out. Please try again.';
-          } else if (error.message.includes('Configuration error')) {
-            errorMessage = error.message;
-          }
-          
-          showMessage(errorMessage, 'error');
-        } finally {
-          setLoadingState(false);
-        }
-      });
-      
-      function setLoadingState(loading) {
-        buttonText.style.display = loading ? 'none' : 'inline';
-        loadingSpinner.style.display = loading ? 'inline' : 'none';
-        waitlistForm.querySelector('button[type="submit"]').disabled = loading;
-      }
-      
-      function showMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = `form-message ${type}`;
-        formMessage.style.display = 'block';
-        
-        // Announce to screen readers
-        formMessage.setAttribute('role', type === 'error' ? 'alert' : 'status');
-        formMessage.setAttribute('aria-live', 'polite');
-        
-        // Auto-hide success messages after 5 seconds
-        if (type === 'success') {
-          setTimeout(() => {
-            if (formMessage.className.includes('success')) {
-              formMessage.style.display = 'none';
-            }
-          }, 5000);
-        }
+        });
       }
     }
     

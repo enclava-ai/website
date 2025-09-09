@@ -872,7 +872,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           data.timestamp = new Date().toISOString();
           data.page = 'managed-cloud';
           
-          const response = await fetch(import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL, {
+          // Hardcoded Google Apps Script URL for GitHub Pages deployment
+          const scriptUrl = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec';
+          
+          const response = await fetch(scriptUrl, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
