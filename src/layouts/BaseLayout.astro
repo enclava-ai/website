@@ -382,6 +382,35 @@ const structuredData = [
         transform: translateY(-2px) scale(1.01);
       }
 
+      .btn-secondary {
+        position: relative;
+        background: transparent;
+        color: #ffffff;
+        padding: 16px 32px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .btn-secondary:hover {
+        border-color: #00d4ff;
+        background: rgba(0, 212, 255, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+      }
+
+      .btn-secondary:active {
+        transform: translateY(-1px);
+      }
+
       .section {
         padding: 120px 0;
         position: relative;
@@ -493,6 +522,13 @@ const structuredData = [
         }
         
         .btn-primary {
+          min-height: 44px; /* Touch-friendly minimum size */
+          padding: 16px 24px;
+          font-size: 16px; /* Prevent zoom on iOS */
+          border-radius: 8px;
+        }
+
+        .btn-secondary {
           min-height: 44px; /* Touch-friendly minimum size */
           padding: 16px 24px;
           font-size: 16px; /* Prevent zoom on iOS */
