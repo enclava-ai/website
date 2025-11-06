@@ -233,9 +233,14 @@ const structuredData = [
     
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="enclava.ai" src="https://analytics.cypherpunk.cloud/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
     <!-- Performance Optimization Hints -->
     <link rel="preload" href="/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="dns-prefetch" href="//analytics.cypherpunk.cloud" />
     <link rel="dns-prefetch" href="//analytics.enclava.ai" />
     <link rel="dns-prefetch" href="//docs.enclava.ai" />
     
