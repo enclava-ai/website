@@ -1,14 +1,14 @@
-tmp/
 # Dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+package-lock.json
 
 # Build outputs
 dist/
-.astro/
+.vite/
 
 # Environment variables
 .env
@@ -73,7 +73,6 @@ jspm_packages/
 
 # Gatsby files
 .cache/
-public
 
 # Storybook build outputs
 .out
@@ -99,5 +98,5 @@ temp/
 ehthumbs.db
 Thumbs.db
 
-# Astro specific
-.astro/
+# Vite specific
+.vite/
