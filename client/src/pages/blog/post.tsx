@@ -6,7 +6,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { ArrowLeft, Calendar, User } from "lucide-react";
-import "highlight.js/styles/github-dark.css";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
