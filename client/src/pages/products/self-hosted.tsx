@@ -62,11 +62,6 @@ export default function SelfHosted() {
                   icon: Code,
                   title: "Full Customization",
                   desc: "Modify, extend, and integrate freely. Access to source code and unlimited customization options."
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Cost Predictable",
-                  desc: "Pay once, use forever. No per-token charges or monthly subscriptions. Scale without additional licensing costs."
                 }
               ].map((item, i) => (
                 <div key={i} className="group p-8 border border-white/10 hover:border-primary/30 transition-all duration-300 bg-card/50">

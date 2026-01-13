@@ -45,8 +45,8 @@ export default function Products() {
                     Deploy on your infrastructure with full administrative access.
                   </li>
                   <li className="text-sm text-gray-300">
-                    <strong className="block text-white mb-1">Cost Predictable</strong>
-                    Pay once, use forever. No per-token charges.
+                    <strong className="block text-white mb-1">Cost Optimized</strong>
+                    Deploy once, use forever. Pay for the tokens you use.
                   </li>
                 </ul>
                 <Link href="/products/self-hosted">
