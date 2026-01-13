@@ -87,7 +87,7 @@ export default function Products() {
                 </div>
                 <h3 className="text-3xl font-display font-medium text-white mb-4">Managed Enclava Cloud</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                   Private AI as a service. All the power of Enclava without the operational overhead. 
+                   Confidential AI as a service. All the power of Enclava without the operational overhead. 
                    We manage the TEE infrastructure, scaling, and updates.
                 </p>
                 <ul className="space-y-4 mb-8 border-l border-white/10 pl-6">

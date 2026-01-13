@@ -39,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-6xl md:text-8xl font-display font-medium tracking-tighter leading-[0.9] text-white"
             >
-              Private AI <br />
+              Confidential AI <br />
               <span className="text-muted-foreground">Made Practical.</span>
             </motion.h1>
 

@@ -25,7 +25,7 @@ export default function ManagedCloud() {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
-                Private AI as a service. All the power of Enclava without the operational overhead.
+                Confidential AI as a service. All the power of Enclava without the operational overhead.
                 We manage the confidential infrastructure, you focus on the AI.
               </p>
               <div className="flex justify-center gap-4">
