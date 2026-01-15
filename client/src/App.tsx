@@ -6,6 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import SelfHosted from "@/pages/products/self-hosted";
 import ManagedCloud from "@/pages/products/managed-cloud";
+import Chatbots from "@/pages/products/chatbots";
+import Agents from "@/pages/products/agents";
+import OCR from "@/pages/products/ocr";
 import ServicesPage from "@/pages/services";
 import BlogIndex from "@/pages/blog/index";
 import BlogPost from "@/pages/blog/post";
@@ -28,6 +31,9 @@ function Router() {
       <Route path="/" component={() => <PageWrapper><Home /></PageWrapper>} />
       <Route path="/products/self-hosted" component={() => <PageWrapper><SelfHosted /></PageWrapper>} />
       <Route path="/products/managed-cloud" component={() => <PageWrapper><ManagedCloud /></PageWrapper>} />
+      <Route path="/products/chatbots" component={() => <PageWrapper><Chatbots /></PageWrapper>} />
+      <Route path="/products/agents" component={() => <PageWrapper><Agents /></PageWrapper>} />
+      <Route path="/products/ocr" component={() => <PageWrapper><OCR /></PageWrapper>} />
       <Route path="/services" component={() => <PageWrapper><ServicesPage /></PageWrapper>} />
       <Route path="/blog" component={() => <PageWrapper><BlogIndex /></PageWrapper>} />
       <Route path="/blog/:slug" component={() => <PageWrapper><BlogPost /></PageWrapper>} />
