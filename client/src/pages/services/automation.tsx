@@ -31,19 +31,22 @@ export default function Automation() {
         </section>
 
         {/* What's Included */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-500/5 to-transparent pointer-events-none"></div>
+
+          <div className="container mx-auto px-6 relative">
+            <div className="max-w-2xl mb-20">
+              <div className="h-px w-16 bg-purple-400 mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
                 What's Included
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Our automation service designs and implements AI-powered workflows that handle complex
                 business processes while maintaining data confidentiality.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-6">
               {[
                 {
                   icon: Bot,
@@ -61,10 +64,21 @@ export default function Automation() {
                   desc: "Build approval workflows and human oversight mechanisms for critical decision points."
                 }
               ].map((item, i) => (
-                <div key={i} className="group p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 bg-card/50">
-                  <item.icon className="w-10 h-10 text-purple-400 mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-display font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <div key={i} className="group relative">
+                  <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-purple-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="flex items-start space-x-6 p-8 pl-10 hover:bg-white/[0.02] transition-colors">
+                    <div className="flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <item.icon className="w-7 h-7 text-purple-400" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed max-w-2xl">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -72,15 +86,18 @@ export default function Automation() {
         </section>
 
         {/* Automation Use Cases */}
-        <section className="py-24 border-t border-white/5 bg-black/20">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <section className="py-32 border-t border-white/5 bg-black/20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+
+          <div className="container mx-auto px-6 relative">
+            <div className="max-w-2xl mb-20">
+              <div className="h-px w-16 bg-purple-400 mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
                 Automation Scenarios
               </h2>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {[
                 {
                   title: "Document Processing Automation",
@@ -113,17 +130,23 @@ export default function Automation() {
                   features: ["Policy analysis", "Historical lookup", "Recommendation engine"]
                 }
               ].map((useCase, i) => (
-                <div key={i} className="p-8 border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent hover:border-purple-500/20 transition-colors">
-                  <h3 className="text-xl font-display font-bold text-white mb-3">{useCase.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{useCase.description}</p>
-                  <ul className="space-y-2">
-                    {useCase.features.map((feature, j) => (
-                      <li key={j} className="flex items-center text-sm text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-purple-400 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <div key={i} className="group relative">
+                  <div className="absolute -left-4 top-0 text-8xl font-display font-bold text-white/5 select-none">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div className="relative p-8 pl-12 hover:bg-white/[0.02] transition-colors border-l-2 border-white/10 hover:border-purple-400/50">
+                    <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{useCase.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {useCase.features.map((feature, j) => (
+                        <div key={j} className="inline-flex items-center px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 text-sm text-purple-300">
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -131,15 +154,18 @@ export default function Automation() {
         </section>
 
         {/* Development Process */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <section className="py-32 bg-background relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+
+          <div className="container mx-auto px-6 relative">
+            <div className="max-w-2xl mb-20">
+              <div className="h-px w-16 bg-purple-400 mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
                 Our Development Process
               </h2>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-16 max-w-5xl">
               {[
                 {
                   step: "01",
@@ -172,13 +198,20 @@ export default function Automation() {
                   description: "Ongoing monitoring of agent performance, user feedback collection, and iterative improvements."
                 }
               ].map((phase, i) => (
-                <div key={i} className="flex items-start space-x-6 p-6 border border-white/5 bg-gradient-to-r from-white/[0.02] to-transparent">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-mono text-sm font-bold">
-                    {phase.step}
+                <div key={i} className="group relative flex items-start space-x-8">
+                  <div className="flex-shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500/30 to-purple-500/5 border border-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <span className="font-mono text-2xl font-bold text-purple-400">{phase.step}</span>
+                    </div>
+                    {i < 5 && (
+                      <div className="w-px h-16 bg-gradient-to-b from-purple-400/30 to-transparent mx-auto mt-4"></div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-white mb-2">{phase.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{phase.description}</p>
+                  <div className="flex-1 pb-8">
+                    <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                      {phase.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">{phase.description}</p>
                   </div>
                 </div>
               ))}
@@ -187,47 +220,55 @@ export default function Automation() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-24 border-t border-white/5 bg-black/20">
+        <section className="py-24 border-t border-white/5 bg-black/20 relative">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Why Choose Our Automation Service
-              </h2>
-            </div>
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="lg:sticky lg:top-32">
+                <div className="h-px w-16 bg-purple-400 mb-6"></div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                  Why Choose Our Automation Service
+                </h2>
+              </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  icon: Bot,
-                  title: "Domain Expertise",
-                  desc: "We understand common business processes and can design agents that handle edge cases and real-world complexity."
-                },
-                {
-                  icon: GitBranch,
-                  title: "Iterative Approach",
-                  desc: "Start with high-value workflows, prove ROI quickly, then expand to additional processes."
-                },
-                {
-                  icon: Users,
-                  title: "Change Management",
-                  desc: "We help train your team, document workflows, and ensure smooth adoption of automated systems."
-                },
-                {
-                  icon: Zap,
-                  title: "Measurable Impact",
-                  desc: "We define clear KPIs and track automation performance to demonstrate tangible business value."
-                }
-              ].map((benefit, i) => (
-                <div key={i} className="flex items-start space-x-4 p-6 border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                    <benefit.icon className="w-6 h-6 text-purple-400" />
+              <div className="space-y-8">
+                {[
+                  {
+                    icon: Bot,
+                    title: "Domain Expertise",
+                    desc: "We understand common business processes and can design agents that handle edge cases and real-world complexity."
+                  },
+                  {
+                    icon: GitBranch,
+                    title: "Iterative Approach",
+                    desc: "Start with high-value workflows, prove ROI quickly, then expand to additional processes."
+                  },
+                  {
+                    icon: Users,
+                    title: "Change Management",
+                    desc: "We help train your team, document workflows, and ensure smooth adoption of automated systems."
+                  },
+                  {
+                    icon: Zap,
+                    title: "Measurable Impact",
+                    desc: "We define clear KPIs and track automation performance to demonstrate tangible business value."
+                  }
+                ].map((benefit, i) => (
+                  <div key={i} className="group relative pl-8 border-l-2 border-white/10 hover:border-purple-400/50 transition-colors">
+                    <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-background border-2 border-white/10 group-hover:border-purple-400 group-hover:bg-purple-500/20 transition-all flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <benefit.icon className="w-8 h-8 text-purple-400 flex-shrink-0 mt-1" strokeWidth={1.5} />
+                      <div>
+                        <h3 className="text-xl text-white font-display font-bold mb-2 group-hover:text-purple-400 transition-colors">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">{benefit.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-display font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{benefit.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>

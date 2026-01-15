@@ -31,19 +31,22 @@ export default function Integration() {
         </section>
 
         {/* What's Included */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-blue-500/5 to-transparent pointer-events-none"></div>
+
+          <div className="container mx-auto px-6 relative">
+            <div className="max-w-2xl mb-20">
+              <div className="h-px w-16 bg-blue-400 mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
                 What's Included
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Our integration service connects your existing data infrastructure to Enclava while maintaining
                 zero-trust security and compliance.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-6">
               {[
                 {
                   icon: Database,
@@ -61,10 +64,21 @@ export default function Integration() {
                   desc: "Implement mutual TLS, attestation, and encrypted channels for all data transfers into the enclave."
                 }
               ].map((item, i) => (
-                <div key={i} className="group p-8 border border-white/10 hover:border-blue-500/30 transition-all duration-300 bg-card/50">
-                  <item.icon className="w-10 h-10 text-blue-400 mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-display font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <div key={i} className="group relative">
+                  <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="flex items-start space-x-6 p-8 pl-10 hover:bg-white/[0.02] transition-colors">
+                    <div className="flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <item.icon className="w-7 h-7 text-blue-400" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed max-w-2xl">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -72,15 +86,18 @@ export default function Integration() {
         </section>
 
         {/* Integration Types */}
-        <section className="py-24 border-t border-white/5 bg-black/20">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <section className="py-32 border-t border-white/5 bg-black/20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent pointer-events-none"></div>
+
+          <div className="container mx-auto px-6 relative">
+            <div className="max-w-2xl mb-20">
+              <div className="h-px w-16 bg-blue-400 mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
                 Integration Scenarios We Support
               </h2>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {[
                 {
                   title: "Knowledge Base Sync",
@@ -113,17 +130,23 @@ export default function Integration() {
                   features: ["Custom protocols", "Legacy format support", "On-premise adapters"]
                 }
               ].map((integration, i) => (
-                <div key={i} className="p-8 border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent hover:border-blue-500/20 transition-colors">
-                  <h3 className="text-xl font-display font-bold text-white mb-3">{integration.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{integration.description}</p>
-                  <ul className="space-y-2">
-                    {integration.features.map((feature, j) => (
-                      <li key={j} className="flex items-center text-sm text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <div key={i} className="group relative">
+                  <div className="absolute -left-4 top-0 text-8xl font-display font-bold text-white/5 select-none">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div className="relative p-8 pl-12 hover:bg-white/[0.02] transition-colors border-l-2 border-white/10 hover:border-blue-400/50">
+                    <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      {integration.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{integration.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {integration.features.map((feature, j) => (
+                        <div key={j} className="inline-flex items-center px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 text-sm text-blue-300">
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -131,15 +154,9 @@ export default function Integration() {
         </section>
 
         {/* Process */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-background relative">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Our Integration Process
-              </h2>
-            </div>
-
-            <div className="space-y-8">
+            <div className="grid lg:grid-cols-5 gap-12">
               {[
                 {
                   step: "01",
@@ -167,14 +184,19 @@ export default function Integration() {
                   description: "Deploy integrations with monitoring, alerting, and automated health checks."
                 }
               ].map((phase, i) => (
-                <div key={i} className="flex items-start space-x-6 p-6 border border-white/5 bg-gradient-to-r from-white/[0.02] to-transparent">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-mono text-sm font-bold">
-                    {phase.step}
+                <div key={i} className="group relative">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/30 to-blue-500/5 border border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform mb-4">
+                      <span className="font-mono text-xl font-bold text-blue-400">{phase.step}</span>
+                    </div>
+                    {i < 4 && (
+                      <div className="hidden lg:block absolute top-8 left-16 w-full h-px bg-gradient-to-r from-blue-400/30 to-transparent"></div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-white mb-2">{phase.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{phase.description}</p>
-                  </div>
+                  <h3 className="text-lg font-display font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {phase.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{phase.description}</p>
                 </div>
               ))}
             </div>
@@ -182,47 +204,55 @@ export default function Integration() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-24 border-t border-white/5 bg-black/20">
+        <section className="py-24 border-t border-white/5 bg-black/20 relative">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Why Choose Our Integration Service
-              </h2>
-            </div>
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="lg:sticky lg:top-32">
+                <div className="h-px w-16 bg-blue-400 mb-6"></div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                  Why Choose Our Integration Service
+                </h2>
+              </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  icon: Code,
-                  title: "Deep Technical Expertise",
-                  desc: "Our team has experience integrating with hundreds of different data sources and APIs."
-                },
-                {
-                  icon: Lock,
-                  title: "Security First",
-                  desc: "Every integration is designed with zero-trust principles, encryption, and attestation."
-                },
-                {
-                  icon: Zap,
-                  title: "Performance Optimized",
-                  desc: "We optimize data transfer, caching, and query performance for minimal latency."
-                },
-                {
-                  icon: Network,
-                  title: "Future-Proof",
-                  desc: "Integrations are built to be maintainable, extensible, and compatible with upgrades."
-                }
-              ].map((benefit, i) => (
-                <div key={i} className="flex items-start space-x-4 p-6 border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                    <benefit.icon className="w-6 h-6 text-blue-400" />
+              <div className="space-y-8">
+                {[
+                  {
+                    icon: Code,
+                    title: "Deep Technical Expertise",
+                    desc: "Our team has experience integrating with hundreds of different data sources and APIs."
+                  },
+                  {
+                    icon: Lock,
+                    title: "Security First",
+                    desc: "Every integration is designed with zero-trust principles, encryption, and attestation."
+                  },
+                  {
+                    icon: Zap,
+                    title: "Performance Optimized",
+                    desc: "We optimize data transfer, caching, and query performance for minimal latency."
+                  },
+                  {
+                    icon: Network,
+                    title: "Future-Proof",
+                    desc: "Integrations are built to be maintainable, extensible, and compatible with upgrades."
+                  }
+                ].map((benefit, i) => (
+                  <div key={i} className="group relative pl-8 border-l-2 border-white/10 hover:border-blue-400/50 transition-colors">
+                    <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-background border-2 border-white/10 group-hover:border-blue-400 group-hover:bg-blue-500/20 transition-all flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <benefit.icon className="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" strokeWidth={1.5} />
+                      <div>
+                        <h3 className="text-xl text-white font-display font-bold mb-2 group-hover:text-blue-400 transition-colors">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">{benefit.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-display font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{benefit.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>

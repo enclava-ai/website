@@ -5,10 +5,10 @@ import { Link } from "wouter";
 const products = [
   {
     icon: MessageSquare,
-    badge: "Simple & Powerful",
+    badge: "Pre-Built Feature",
     title: "Chatbots",
     tagline: "RAG-Enhanced Endpoints",
-    description: "OpenAI-compatible chat endpoints automatically enriched with your private knowledge base. Perfect for support bots and Q&A systems that need access to proprietary data.",
+    description: "OpenAI-compatible endpoints that automatically enrich every request with context from your knowledge base. Deploy support bots and Q&A systems in minutes, not weeks.",
     features: [
       "Auto-enriched context from RAG",
       "Drop-in OpenAI replacement",
@@ -21,10 +21,10 @@ const products = [
   },
   {
     icon: Bot,
-    badge: "Advanced Capabilities",
+    badge: "Premium Feature",
     title: "Agents",
     tagline: "Autonomous AI Systems",
-    description: "Multi-tool agents with access to knowledge bases, MCP servers, and custom integrations. Build sophisticated agentic workflows that go beyond simple chat.",
+    description: "Pre-configured agentic runtime with tool use, multi-knowledge base access, and MCP integration. Build sophisticated workflows without managing complex infrastructure.",
     features: [
       "Tool use & function calling",
       "Multi-knowledge base access",
@@ -37,10 +37,10 @@ const products = [
   },
   {
     icon: ScanText,
-    badge: "Document Intelligence",
+    badge: "Premium Feature",
     title: "OCR",
-    tagline: "Confidential Document Processing",
-    description: "Extract and process data from sensitive documents—PII, corporate files, invoices—with AI while maintaining complete confidentiality. Predefined and custom templates for structured JSON output.",
+    tagline: "Document Processing Pipeline",
+    description: "Purpose-built document processing engine for sensitive data. Extract structured information from PII, invoices, and corporate documents without custom ML pipelines.",
     features: [
       "PII & sensitive data handling",
       "Custom template support",
@@ -74,13 +74,13 @@ export default function Features() {
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
           <span className="text-primary font-mono text-xs tracking-widest uppercase mb-4 block">
-            Product Suite
+            Built-In Features
           </span>
           <h2 className="text-4xl md:text-6xl font-display font-medium text-white mb-6 leading-tight">
-            Three Ways to Deploy <br/>Confidential AI
+            Ready-to-Use <br/>Applications
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            From simple chatbots to complex document processing, choose the right solution for your use case. All running in secure enclaves.
+            Beyond the core confidential inference API, Enclava provides premium features that make it easy to deploy common AI use cases without extra engineering effort.
           </p>
         </div>
 
@@ -135,21 +135,40 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Platform Features */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto pt-16 border-t border-white/5">
-          {platformFeatures.map((feature, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                <feature.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+        {/* Platform Foundation */}
+        <div className="max-w-4xl mx-auto pt-16 border-t border-white/5">
+          <div className="mb-12 p-8 bg-gradient-to-br from-white/[0.02] to-transparent border border-white/5">
+            <div className="flex items-start space-x-4 mb-6">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Database className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="text-white font-medium mb-2">{feature.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
+                <h3 className="text-2xl font-display font-bold text-white mb-3">
+                  Core Confidential Inference API
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  At the foundation, Enclava provides a confidential inference API that works with any model.
+                  Use it directly to build custom applications, or leverage our pre-built features for faster development.
                 </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {platformFeatures.map((feature, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                  <feature.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-2">{feature.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
