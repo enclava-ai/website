@@ -10,6 +10,9 @@ import Chatbots from "@/pages/products/chatbots";
 import Agents from "@/pages/products/agents";
 import OCR from "@/pages/products/ocr";
 import ServicesPage from "@/pages/services";
+import Deployment from "@/pages/services/deployment";
+import Integration from "@/pages/services/integration";
+import Automation from "@/pages/services/automation";
 import BlogIndex from "@/pages/blog/index";
 import BlogPost from "@/pages/blog/post";
 import NotFound from "@/pages/not-found";
@@ -35,6 +38,9 @@ function Router() {
       <Route path="/products/agents" component={() => <PageWrapper><Agents /></PageWrapper>} />
       <Route path="/products/ocr" component={() => <PageWrapper><OCR /></PageWrapper>} />
       <Route path="/services" component={() => <PageWrapper><ServicesPage /></PageWrapper>} />
+      <Route path="/services/deployment" component={() => <PageWrapper><Deployment /></PageWrapper>} />
+      <Route path="/services/integration" component={() => <PageWrapper><Integration /></PageWrapper>} />
+      <Route path="/services/automation" component={() => <PageWrapper><Automation /></PageWrapper>} />
       <Route path="/blog" component={() => <PageWrapper><BlogIndex /></PageWrapper>} />
       <Route path="/blog/:slug" component={() => <PageWrapper><BlogPost /></PageWrapper>} />
       <Route component={NotFound} />
