@@ -37,9 +37,11 @@ export default function OCR() {
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
-                <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/10 hover:bg-white/5 hover:text-white transition-all font-mono">
-                  View Documentation
-                </Button>
+                <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/10 hover:bg-white/5 hover:text-white transition-all font-mono">
+                    View Documentation
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -269,9 +271,11 @@ export default function OCR() {
                   Get Started
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/20 hover:border-green-500 hover:text-green-400 transition-all font-mono">
-                View Documentation
-              </Button>
+              <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/20 hover:border-green-500 hover:text-green-400 transition-all font-mono">
+                  View Documentation
+                </Button>
+              </a>
             </div>
           </div>
         </section>

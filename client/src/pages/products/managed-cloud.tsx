@@ -2,6 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cloud, Lock, RefreshCw } from "lucide-react";
+import { Link } from "wouter";
 
 export default function ManagedCloud() {
   return (
@@ -29,9 +30,11 @@ export default function ManagedCloud() {
                 We manage the confidential infrastructure, you focus on the AI.
               </p>
               <div className="flex justify-center gap-4">
-                <Button size="lg" className="h-14 px-8 rounded-none text-base bg-purple-600 hover:bg-purple-700 text-white transition-all font-mono">
-                  Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/#hero">
+                  <Button size="lg" className="h-14 px-8 rounded-none text-base bg-purple-600 hover:bg-purple-700 text-white transition-all font-mono">
+                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

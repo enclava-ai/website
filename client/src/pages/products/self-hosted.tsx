@@ -32,12 +32,16 @@ export default function SelfHosted() {
                 Keep your data within your security perimeter while meeting the strictest compliance requirements.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="h-14 px-8 rounded-none text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono">
-                  View on GitHub <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/10 hover:bg-white/5 hover:text-white transition-all font-mono">
-                  Read Documentation
-                </Button>
+                <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="h-14 px-8 rounded-none text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono">
+                    View on GitHub <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
+                <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/10 hover:bg-white/5 hover:text-white transition-all font-mono">
+                    Read Documentation
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -153,12 +157,16 @@ export default function SelfHosted() {
               Get started with our open source edition today or contact us for enterprise support.
             </p>
             <div className="flex justify-center gap-4">
-              <Button size="lg" className="h-14 px-8 rounded-none text-base bg-white text-black hover:bg-gray-200 transition-all font-mono">
-                Deploy Now
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/20 hover:border-primary hover:text-primary transition-all font-mono">
-                Contact Sales
-              </Button>
+              <a href="https://docs.enclava.ai" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="h-14 px-8 rounded-none text-base bg-white text-black hover:bg-gray-200 transition-all font-mono">
+                  Deploy Now
+                </Button>
+              </a>
+              <a href="https://cal.com/aljaz/enclava" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="h-14 px-8 rounded-none text-base border-white/20 hover:border-primary hover:text-primary transition-all font-mono">
+                  Contact Sales
+                </Button>
+              </a>
             </div>
           </div>
         </section>

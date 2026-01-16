@@ -15,6 +15,8 @@ import Integration from "@/pages/services/integration";
 import Automation from "@/pages/services/automation";
 import BlogIndex from "@/pages/blog/index";
 import BlogPost from "@/pages/blog/post";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 
@@ -43,6 +45,8 @@ function Router() {
       <Route path="/services/automation" component={() => <PageWrapper><Automation /></PageWrapper>} />
       <Route path="/blog" component={() => <PageWrapper><BlogIndex /></PageWrapper>} />
       <Route path="/blog/:slug" component={() => <PageWrapper><BlogPost /></PageWrapper>} />
+      <Route path="/privacy" component={() => <PageWrapper><Privacy /></PageWrapper>} />
+      <Route path="/terms" component={() => <PageWrapper><Terms /></PageWrapper>} />
       <Route component={NotFound} />
     </Switch>
   );

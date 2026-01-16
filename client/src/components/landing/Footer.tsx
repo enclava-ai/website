@@ -14,8 +14,8 @@ export default function Footer() {
             <h5 className="font-bold text-white mb-4">Product</h5>
             <ul className="space-y-2">
               <li><a href="/#products" className="text-muted-foreground hover:text-primary transition-colors">Platform</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
               <li><a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
             </ul>
           </div>
           
@@ -32,8 +32,8 @@ export default function Footer() {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Enclava. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
