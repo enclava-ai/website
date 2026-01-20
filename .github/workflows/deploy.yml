@@ -41,6 +41,9 @@ jobs:
           NODE_ENV: production
           VITE_WAITLIST_URL: ${{ secrets.VITE_WAITLIST_URL }}
 
+      - name: Create 404.html for SPA routing
+        run: cp ./dist/public/index.html ./dist/public/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
