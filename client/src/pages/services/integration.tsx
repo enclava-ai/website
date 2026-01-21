@@ -116,8 +116,8 @@ export default function Integration() {
                 },
                 {
                   title: "Document Processing Pipelines",
-                  description: "Build pipelines that ingest documents from various sources, process them with OCR, and load into knowledge bases.",
-                  features: ["Multi-format support", "OCR integration", "Validation workflows"]
+                  description: "Build pipelines that ingest documents from various sources, process them with Extract, and load into knowledge bases.",
+                  features: ["Multi-format support", "Extract integration", "Validation workflows"]
                 },
                 {
                   title: "CRM & Ticketing Systems",

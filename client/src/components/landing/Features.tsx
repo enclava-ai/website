@@ -38,8 +38,8 @@ const products = [
   {
     icon: ScanText,
     badge: "Premium Feature",
-    title: "OCR",
-    tagline: "Document Processing Pipeline",
+    title: "Extract",
+    tagline: "Structured Document Intelligence",
     description: "Purpose-built document processing engine for sensitive data. Extract structured information from PII, invoices, and corporate documents without custom ML pipelines.",
     features: [
       "PII & sensitive data handling",
@@ -49,7 +49,7 @@ const products = [
     accent: "from-green-500/10 to-emerald-500/10",
     iconBg: "bg-green-500/10 group-hover:bg-green-500 group-hover:text-black",
     borderAccent: "border-green-500/20",
-    link: "/products/ocr"
+    link: "/products/extract"
   }
 ];
 

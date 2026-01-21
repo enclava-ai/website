@@ -101,8 +101,8 @@ export default function Automation() {
               {[
                 {
                   title: "Document Processing Automation",
-                  description: "Automatically process incoming documents—invoices, contracts, forms—extract data with OCR, validate, and route to appropriate systems.",
-                  features: ["OCR extraction", "Data validation", "System integration"]
+                  description: "Automatically process incoming documents—invoices, contracts, forms—extract structured data, validate, and route to appropriate systems.",
+                  features: ["Structured extraction", "Data validation", "System integration"]
                 },
                 {
                   title: "Customer Support Triage",

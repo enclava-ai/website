@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ScanText, FileJson, Lock, CheckCircle, FileText, Zap } from "lucide-react";
 import { Link } from "wouter";
 
-export default function OCR() {
+export default function Extract() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30 selection:text-white">
       <Navbar />
@@ -24,7 +24,7 @@ export default function OCR() {
               <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
                 Confidential <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                  Document OCR
+                  Document Extract
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
@@ -55,8 +55,8 @@ export default function OCR() {
                 Process Sensitive Documents Without Exposure
               </h2>
               <p className="text-muted-foreground text-lg">
-                Upload documents containing PII, financial data, or proprietary information. Our OCR module extracts
-                and structures the data using AI—all within the secure enclave.
+                Upload documents containing PII, financial data, or proprietary information. Our extraction engine
+                structures the data using AI—all within the secure enclave.
               </p>
             </div>
 
@@ -156,7 +156,7 @@ export default function OCR() {
                   Custom Template System
                 </h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                  Define exactly what data you need extracted and in what format. Our AI-powered OCR adapts
+                  Define exactly what data you need extracted and in what format. Our AI-powered extraction adapts
                   to your specific document types and output requirements.
                 </p>
                 <ul className="space-y-4">
@@ -235,7 +235,7 @@ export default function OCR() {
                 Built for Automation Workflows
               </h2>
               <p className="text-muted-foreground text-lg">
-                Enclava OCR is designed to integrate seamlessly into your existing automation pipelines.
+                Enclava Extract is designed to integrate seamlessly into your existing automation pipelines.
                 Upload documents via API, get structured JSON responses, and feed them directly into your systems.
               </p>
             </div>
@@ -263,7 +263,7 @@ export default function OCR() {
               Ready to process confidential documents?
             </h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Start extracting data from sensitive documents with AI-powered OCR that respects privacy.
+              Start extracting data from sensitive documents with AI-powered extraction that respects privacy.
             </p>
             <div className="flex justify-center gap-4">
               <Link href="/#features">
