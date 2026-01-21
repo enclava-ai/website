@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import WaitlistForm from "./WaitlistForm";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import heroBg from "/images/abstract_secure_confidential_computing_visualization.png";
 
 export default function Hero() {
@@ -60,13 +62,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="pt-4 max-w-xl"
             >
-              <WaitlistForm source="hero" />
-              <p className="text-muted-foreground text-sm mt-3 font-mono">
-                Join the waitlist for early access.
-              </p>
+              <Link href="/get-started">
+                <Button size="lg" className="h-14 px-8 rounded-none text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono">
+                  Get Started Now <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </motion.div>
+
           </div>
 
           {/* Right Content - Abstract Technical Viz */}

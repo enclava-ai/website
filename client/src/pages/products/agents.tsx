@@ -32,7 +32,7 @@ export default function Agents() {
                 Build agentic workflows that go far beyond simple chat.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/#features">
+                <Link href="/get-started">
                   <Button size="lg" className="h-14 px-8 rounded-none text-base bg-purple-500 text-white hover:bg-purple-600 transition-all font-mono">
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -259,7 +259,7 @@ export default function Agents() {
               Deploy sophisticated AI agents that respect your data's confidentiality.
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/#features">
+              <Link href="/get-started">
                 <Button size="lg" className="h-14 px-8 rounded-none text-base bg-purple-500 text-white hover:bg-purple-600 transition-all font-mono">
                   Get Started
                 </Button>

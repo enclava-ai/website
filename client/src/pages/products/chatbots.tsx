@@ -32,7 +32,7 @@ export default function Chatbots() {
                 Deploy support bots and Q&A systems that understand your proprietary data without exposing it.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/#features">
+                <Link href="/get-started">
                   <Button size="lg" className="h-14 px-8 rounded-none text-base bg-blue-500 text-white hover:bg-blue-600 transition-all font-mono">
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -210,7 +210,7 @@ const response = await client.chat.completions.create({
               Start building confidential chatbots with automatic RAG enrichment today.
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/#features">
+              <Link href="/get-started">
                 <Button size="lg" className="h-14 px-8 rounded-none text-base bg-blue-500 text-white hover:bg-blue-600 transition-all font-mono">
                   Get Started
                 </Button>

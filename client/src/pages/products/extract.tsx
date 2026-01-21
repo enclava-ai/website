@@ -32,7 +32,7 @@ export default function Extract() {
                 while maintaining complete confidentiality. Predefined and custom templates for structured JSON output.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/#features">
+                <Link href="/get-started">
                   <Button size="lg" className="h-14 px-8 rounded-none text-base bg-green-500 text-white hover:bg-green-600 transition-all font-mono">
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -266,7 +266,7 @@ export default function Extract() {
               Start extracting data from sensitive documents with AI-powered extraction that respects privacy.
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/#features">
+              <Link href="/get-started">
                 <Button size="lg" className="h-14 px-8 rounded-none text-base bg-green-500 text-white hover:bg-green-600 transition-all font-mono">
                   Get Started
                 </Button>

@@ -40,9 +40,11 @@ export default function Navbar() {
           <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <Button size="sm" className="font-semibold bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300 rounded-none px-6">
-            Get Started
-          </Button>
+          <Link href="/get-started">
+            <Button size="sm" className="font-semibold bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300 rounded-none px-6">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

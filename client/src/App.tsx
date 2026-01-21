@@ -9,6 +9,7 @@ import ManagedCloud from "@/pages/products/managed-cloud";
 import Chatbots from "@/pages/products/chatbots";
 import Agents from "@/pages/products/agents";
 import Extract from "@/pages/products/extract";
+import GetStarted from "@/pages/get-started";
 import ServicesPage from "@/pages/services";
 import Deployment from "@/pages/services/deployment";
 import Integration from "@/pages/services/integration";
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/products/chatbots" component={() => <PageWrapper><Chatbots /></PageWrapper>} />
       <Route path="/products/agents" component={() => <PageWrapper><Agents /></PageWrapper>} />
       <Route path="/products/extract" component={() => <PageWrapper><Extract /></PageWrapper>} />
+      <Route path="/get-started" component={() => <PageWrapper><GetStarted /></PageWrapper>} />
       <Route path="/services" component={() => <PageWrapper><ServicesPage /></PageWrapper>} />
       <Route path="/services/deployment" component={() => <PageWrapper><Deployment /></PageWrapper>} />
       <Route path="/services/integration" component={() => <PageWrapper><Integration /></PageWrapper>} />
