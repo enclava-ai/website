@@ -5,7 +5,6 @@ import { Link } from "wouter";
 const products = [
   {
     icon: MessageSquare,
-    badge: "Pre-Built Feature",
     title: "Chatbots",
     tagline: "RAG-Enhanced Endpoints",
     description: "OpenAI-compatible endpoints that automatically enrich every request with context from your knowledge base. Deploy support bots and Q&A systems in minutes, not weeks.",
@@ -21,7 +20,6 @@ const products = [
   },
   {
     icon: Bot,
-    badge: "Premium Feature",
     title: "Agents",
     tagline: "Autonomous AI Systems",
     description: "Pre-configured agentic runtime with tool use, multi-knowledge base access, and MCP integration. Build sophisticated workflows without managing complex infrastructure.",
@@ -37,7 +35,6 @@ const products = [
   },
   {
     icon: ScanText,
-    badge: "Premium Feature",
     title: "Extract",
     tagline: "Structured Document Intelligence",
     description: "Purpose-built document processing engine for sensitive data. Extract structured information from PII, invoices, and corporate documents without custom ML pipelines.",
@@ -89,16 +86,8 @@ export default function Features() {
           {products.map((product, index) => (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br ${product.accent} border border-white/10 p-8 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5`}
+              className={`group relative flex flex-col bg-gradient-to-br ${product.accent} border border-white/10 p-8 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5`}
             >
-              {/* Badge */}
-              <div className="inline-flex items-center space-x-2 mb-6">
-                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                <span className="text-primary font-mono text-xs uppercase tracking-wider">
-                  {product.badge}
-                </span>
-              </div>
-
               {/* Title */}
               <h3 className="text-3xl font-display font-medium text-white mb-2">
                 {product.title}
@@ -123,7 +112,7 @@ export default function Features() {
               </ul>
 
               {/* Learn More */}
-              <Link href={product.link}>
+              <Link href={product.link} className="mt-auto">
                 <Button
                   variant="link"
                   className="p-0 h-auto text-white hover:text-primary text-sm group-hover:translate-x-1 transition-transform"
