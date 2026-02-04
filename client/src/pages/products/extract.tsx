@@ -24,7 +24,7 @@ export default function Extract() {
               <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
                 Confidential <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                  Document Extract
+                 Document Extraction
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
