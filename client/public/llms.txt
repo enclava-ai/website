@@ -1,0 +1,35 @@
+# Enclava
+
+> Confidential AI platform. Run sensitive AI workloads in secure enclaves with data encrypted in use, at rest, and in transit. Open source, zero trust, self-hosted or managed.
+
+Enclava provides a confidential inference API that works with any model, plus ready-to-use applications (chatbots, agents, document extraction) and professional services (deployment, integration, automation).
+
+- [Documentation](https://docs.enclava.ai)
+
+## Products
+
+- [Confidential Chatbots](/products/chatbots.md): OpenAI-compatible RAG-enhanced endpoints for support bots and Q&A systems
+- [Autonomous AI Agents](/products/agents.md): Agentic runtime with tool use, multi-knowledge base access, and MCP integration
+- [Document Extraction](/products/extract.md): Structured data extraction from sensitive documents with predefined and custom templates
+- [Self-Hosted Platform](/products/self-hosted.md): Deploy on your infrastructure with full control, open source
+- [Managed Cloud](/products/managed-cloud.md): Confidential AI as a service, coming Q2 2026
+
+## Services
+
+- [Professional Services](/services.md): Overview of expert engineering services
+- [White-Glove Deployment](/services/deployment.md): End-to-end architecture, security hardening, and compliance
+- [Data Integration](/services/integration.md): Secure connectors to knowledge bases, data warehouses, and APIs
+- [Process Automation](/services/automation.md): Custom agent development and workflow orchestration
+
+## Getting Started
+
+- [Get Started](/get-started.md): Choose your deployment model and next steps
+
+## Blog
+
+- [Blog](/blog/index.md): Articles on confidential computing and AI security
+
+## Legal
+
+- [Privacy Policy](/privacy.md): Data handling and privacy practices
+- [Terms of Service](/terms.md): Terms and conditions of service
