@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Loader2, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const APPS_SCRIPT_URL = import.meta.env.VITE_WAITLIST_URL || "";
+import { submitLead } from "@/lib/supabase";
 
 interface WaitlistFormProps {
   className?: string;
@@ -25,29 +24,14 @@ export default function WaitlistForm({ className, source = "hero" }: WaitlistFor
     setErrorMsg("");
 
     try {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({
-          email: email.trim(),
-          userAgent: navigator.userAgent,
-          referer: document.referrer,
-          source,
-        }),
-      });
+      const result = await submitLead(email, source);
 
-      const data = await res.json();
-
-      if (data.ok) {
+      if (result.status === "ok" || result.status === "duplicate") {
         setStatus("success");
         setEmail("");
       } else {
         setStatus("error");
-        setErrorMsg(
-          data.error === "invalid_email"
-            ? "Please enter a valid email"
-            : "Something went wrong. Please try again."
-        );
+        setErrorMsg(result.message || "Something went wrong. Please try again.");
       }
     } catch {
       setStatus("error");
@@ -80,14 +64,14 @@ export default function WaitlistForm({ className, source = "hero" }: WaitlistFor
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
-            className="h-14 px-5 rounded-none text-base bg-white/5 border-white/10 text-white placeholder:text-muted-foreground focus:border-primary focus:ring-primary font-mono"
+            className="h-14 px-5 rounded-lg text-base bg-white/5 border-white/10 text-white placeholder:text-muted-foreground focus:border-primary focus:ring-primary font-mono"
           />
         </div>
         <Button
           type="submit"
           size="lg"
           disabled={status === "loading" || !email.trim()}
-          className="h-14 px-8 rounded-none text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono tracking-tight disabled:opacity-50"
+          className="h-14 px-8 rounded-lg text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono tracking-tight disabled:opacity-50"
         >
           {status === "loading" ? (
             <Loader2 className="w-4 h-4 animate-spin" />

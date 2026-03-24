@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Server, Users, Cloud, Wrench, Loader2, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const APPS_SCRIPT_URL = import.meta.env.VITE_WAITLIST_URL || "";
+import { submitLead } from "@/lib/supabase";
 
 function ManagedWaitlistForm() {
   const [email, setEmail] = useState("");
@@ -21,29 +20,14 @@ function ManagedWaitlistForm() {
     setErrorMsg("");
 
     try {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({
-          email: email.trim(),
-          userAgent: navigator.userAgent,
-          referer: document.referrer,
-          source: "get-started-managed",
-        }),
-      });
+      const result = await submitLead(email, "get-started-managed");
 
-      const data = await res.json();
-
-      if (data.ok) {
+      if (result.status === "ok" || result.status === "duplicate") {
         setStatus("success");
         setEmail("");
       } else {
         setStatus("error");
-        setErrorMsg(
-          data.error === "invalid_email"
-            ? "Please enter a valid email"
-            : "Something went wrong. Please try again."
-        );
+        setErrorMsg(result.message || "Something went wrong. Please try again.");
       }
     } catch {
       setStatus("error");
