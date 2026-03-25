@@ -39,7 +39,8 @@ jobs:
         run: pnpm run build:client
         env:
           NODE_ENV: production
-          VITE_WAITLIST_URL: ${{ secrets.VITE_WAITLIST_URL }}
+          VITE_LEADS_SUPABASE_URL: ${{ secrets.VITE_LEADS_SUPABASE_URL }}
+          VITE_LEADS_SUPABASE_ANON_KEY: ${{ secrets.VITE_LEADS_SUPABASE_ANON_KEY }}
 
       - name: Create 404.html for SPA routing
         run: cp ./dist/public/index.html ./dist/public/404.html
