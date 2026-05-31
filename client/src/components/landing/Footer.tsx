@@ -23,7 +23,7 @@ export default function Footer() {
             <h5 className="font-bold text-white mb-4">Resources</h5>
             <ul className="space-y-2">
               <li><a href="https://docs.enclava.ai" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
-              <li><a href="https://github.com/enclava-ai/enclava" className="text-muted-foreground hover:text-primary transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/enclava-labs/enclava" className="text-muted-foreground hover:text-primary transition-colors">GitHub</a></li>
               <li><a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
             </ul>
           </div>

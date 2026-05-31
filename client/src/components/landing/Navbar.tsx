@@ -37,7 +37,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://github.com/enclava-labs/enclava" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
             <Github className="w-5 h-5" />
           </a>
           <Link href="/get-started">

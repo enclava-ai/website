@@ -32,7 +32,7 @@ export default function SelfHosted() {
                 Keep your data within your security perimeter while meeting the strictest compliance requirements.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="https://github.com/enclava-ai/enclava" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/enclava-labs/enclava" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="h-14 px-8 rounded-none text-base bg-primary text-background hover:bg-primary/90 transition-all font-mono">
                     View on GitHub <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>

@@ -67,6 +67,6 @@ Confidential AI as a service. All the power of Enclava without the operational o
 ## Links
 
 - [Documentation](https://docs.enclava.ai)
-- [GitHub](https://github.com/enclava-ai/enclava)
+- [GitHub](https://github.com/enclava-labs/enclava)
 - [Get Started](/get-started.md)
 - [Schedule a Call](https://cal.com/aljaz/enclava)

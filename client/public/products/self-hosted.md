@@ -46,6 +46,6 @@ services:
 
 ## Links
 
-- [GitHub Repository](https://github.com/enclava-ai/enclava)
+- [GitHub Repository](https://github.com/enclava-labs/enclava)
 - [Documentation](https://docs.enclava.ai)
 - [Schedule a Call](https://cal.com/aljaz/enclava)
