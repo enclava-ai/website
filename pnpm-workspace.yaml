@@ -1,11 +1,11 @@
-packages:
-  - .
-
 overrides:
   esbuild@<0.28.1: 0.28.2
   qs@<6.15.2: 6.15.2
   picomatch@<4.0.4: 4.0.4
   path-to-regexp@<8.4.0: 8.4.0
+allowBuilds:
+  bufferutil: true
+  esbuild: true
 minimumReleaseAgeExclude:
   - esbuild@0.28.1
   - vite@7.3.5
