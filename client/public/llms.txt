@@ -5,6 +5,11 @@
 Enclava provides a confidential inference API that works with any model, plus ready-to-use applications (chatbots, agents, document extraction) and professional services (deployment, integration, automation).
 
 - [Documentation](https://docs.enclava.ai)
+- [GitHub](https://github.com/enclava-labs/)
+- [X](https://x.com/EnclavaLabs)
+- [LinkedIn](https://www.linkedin.com/company/enclava-labs/)
+- [Company](https://enclava-labs.com/)
+- [Platform](https://enclava.dev)
 
 ## Products
 

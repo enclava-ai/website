@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import SocialLinks from "@/components/landing/SocialLinks";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -37,9 +37,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <a href="https://github.com/enclava-labs/enclava" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-            <Github className="w-5 h-5" />
-          </a>
+          <SocialLinks className="hidden sm:flex" />
           <Link href="/get-started">
             <Button size="sm" className="font-semibold bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300 rounded-none px-6">
               Get Started
