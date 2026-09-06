@@ -100,3 +100,5 @@ Thumbs.db
 
 # Vite specific
 .vite/
+
+.planning/debug/
